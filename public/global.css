@@ -45,7 +45,179 @@ table {
 
 body {
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  background: #fdfaf5;
-  color: #05191a;
+  background: #2e2f40;
+  color: rgba(255, 255, 255, 0.4);
   line-height: 1;
+}
+
+.row {
+  margin: 0 -4px;
+}
+
+.row:before, .row:after {
+  content: "";
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
+.col {
+  float: left;
+  padding: 0 4px;
+  box-sizing: border-box;
+}
+
+.col-1-2 {
+  width: 50%;
+}
+
+.col-1-3 {
+  width: 33.33%;
+}
+
+.col-1-4 {
+  width: 25%;
+}
+
+.col-1-8 {
+  width: 12.5%;
+}
+
+@media all and (max-width: 680px) {
+  .row {
+    margin: 0;
+  }
+  .col-1-3 {
+    width: 100%;
+    padding: 0;
+  }
+  .col-1-4 {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+label {
+  font-size: 16px;
+  display: block;
+  margin: 0 0 8px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+input[type="text"] {
+  font-size: 18px;
+  background: #37425f;
+  color: #fff;
+  width: 100%;
+  height: 40px;
+  border-radius: 6px;
+  border: 2px solid #4d6deb;
+  padding: 0 6px;
+  margin: 0 0 16px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+button.button {
+  font-size: 18px;
+  background: #4d6deb;
+  color: #fff;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+button.button.secondary {
+  background: #37425f;
+}
+
+input[type="text"]:focus, button.button:focus {
+  box-shadow: 0 0 0 2px #37425f;
+}
+button.button:active {
+  background: #434c66;
+}
+
+.select {
+  background: #37425f;
+  color: #fff;
+  width: 100%;
+  height: 40px;
+  margin: 0 0 16px;
+  padding: 0;
+  border-radius: 6px;
+  border: 2px solid #4d6deb;
+  overflow: hidden;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.select select {
+  color: #fff;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 18px;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 5px;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.select select:focus {
+  outline: none;
+  border: none;
+}
+
+.select select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #fff;
+}
+
+.select select option {
+  outline: none;
+  border: none;
+}
+
+.example {
+  max-width: 680px;
+  margin: 100px auto 20px;
+  padding: 0 10px;
+}
+
+.example-title {
+  margin: 0 0 50px;
+}
+
+.example-title h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #fff;
+}
+
+.example-title h1 a {
+  vertical-align: super;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4d6deb;
+  margin: 0 0 0 5px;
+  text-decoration: none;
+}
+
+.example-title h1 a:hover {
+  text-decoration: underline;
+}
+
+.example-title p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
 }

@@ -4,5 +4,5 @@
 </script>
 
 <Notifications>
-	<Children />
+  <Children />
 </Notifications>

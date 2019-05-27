@@ -5,10 +5,10 @@
 
   export let notification;
 
-  const context = getContext();
+  const { remove } = getContext();
 
-  const deleteNotifications = () => context.delete(notification.id);
-  const timeout = setTimeout(() => deleteNotifications, 50000);
+  const deleteNotifications = () => remove(notification.id);
+  const timeout = setTimeout(() => deleteNotifications(), notification.deleteAfter || 4000);
 
   onDestroy(() => {
     if (timeout) clearTimeout(timeout);
@@ -24,15 +24,17 @@
     background: #fff;
     color: #000;
     border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 0 4px rgba(0, 0, 0, 0.05);
   }
   .notification-context {
+    width: 210px;
     padding: 12px 6px 12px 12px;
+    box-sizing: border-box;
+    word-wrap:break-word;
   }
   button {
     display: block;
-    width: 50px;
-    padding: 0;
+    width: 40px;
+    padding: 0 0 2px;
     margin: 0;
     border: none;
     border-left: 1px solid #eee;
@@ -40,7 +42,8 @@
     background: none;
     cursor: pointer;
     font-size: 20px;
-    color: '#000';
+    color: #000;
+    box-sizing: border-box;
   }
   button:hover {
     background: rgba(0, 0, 0, 0.01);

@@ -26,7 +26,7 @@
   .notification-bottom-center,
   .notification-bottom-right {
     position: fixed;
-    width: 250px;
+    width: 270px;
   }
   .notification-top-left {
     top: 0;

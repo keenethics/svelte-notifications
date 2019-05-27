@@ -7,11 +7,13 @@
     "es6": true,
     "browser": true
   },
+  "extends": "standard",
   "plugins": [
     "svelte3"
   ],
   "rules": {
-
+    "semi": [2, "always"],
+    "comma-dangle": ["error", "always-multiline"]
   },
   "settings": {
 
