@@ -6,6 +6,8 @@
   import context from '../context';
   import store from '../store';
 
+  export let notificationItem = null;
+
   setContext(context, store);
 
   const positions = [
@@ -16,6 +18,8 @@
     'bottom-center',
     'bottom-right',
   ];
+
+  const getItem = () => notificationItem();
 </script>
 
 <style>
@@ -62,7 +66,11 @@
     <div class={`notification-${position}`}>
       {#each $store as notification (notification.id)}
         {#if notification.position === position}
-          <Notification {notification}/>
+          {#if notificationItem}
+            <svelte:component this={notificationItem} {notification}/>
+          {:else}
+            <Notification {notification}/>
+          {/if}
         {/if}
       {/each}
     </div>
