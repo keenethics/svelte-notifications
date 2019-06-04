@@ -1,5 +1,6 @@
 <script>
-  import { Notifications } from './notifications';
+  import { Notifications } from '../src';
+
   import Children from './Children.svelte';
 </script>
 

@@ -1,10 +1,10 @@
 <script>
-  import { setContext } from "svelte";
-
-  import context from './context.js';
-  import store from './store.js';
-
   import Notification from './Notification.svelte';
+
+  import { setContext } from 'svelte';
+
+  import context from '../context';
+  import store from '../store';
 
   setContext(context, store);
 

@@ -1,14 +1,16 @@
 <script>
   import { onDestroy } from 'svelte';
 
-  import getContext from './getContext.js';
+  import getContext from '../getContext';
 
   export let notification;
 
+  const { id, deleteAfter } = notification;
+
   const { remove } = getContext();
 
-  const deleteNotifications = () => remove(notification.id);
-  const timeout = setTimeout(() => deleteNotifications(), notification.deleteAfter || 4000);
+  const deleteNotifications = () => remove(id);
+  const timeout = setTimeout(() => deleteNotifications(), deleteAfter || 4000);
 
   onDestroy(() => {
     if (timeout) clearTimeout(timeout);

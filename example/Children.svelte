@@ -1,5 +1,5 @@
 <script>
-  import { getContext } from './notifications';
+  import { getContext } from '../src';
 
   let text = 'Notification';
   let deleteAfter = 4000;
