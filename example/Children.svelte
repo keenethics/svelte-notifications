@@ -2,7 +2,7 @@
   import { getContext } from '../src';
 
   let text = 'Notification';
-  let deleteAfter = 4000;
+  let removeAfter = 4000;
   let position = 'bottom-center';
 
   const {
@@ -43,13 +43,25 @@
       <input
         id="notification-remove-after"
         type="text"
-        bind:value={deleteAfter}
+        bind:value={removeAfter}
       />
     </div>
     <div class="col col-1-3">
       <label for="notification-position">
         Position
       </label>
+      <!-- <div class="position-select">
+        <div class="position-select-row">
+          <button class="top-left active">&nwarr;</button>
+          <button class="top-center">&uarr;</button>
+          <button class="top-right">&nearr;</button>
+        </div>
+        <div class="position-select-row">
+          <button class="bottom-left">&swarr;</button>
+          <button class="bottom-center">&darr;</button>
+          <button class="bottom-right">&searr;</button>
+        </div>
+      </div> -->
       <div class="select">
         <select id="position" bind:value={position}>
           <option value="top-left">Top left</option>
@@ -66,7 +78,7 @@
     on:click={() => add({
       id: new Date().getTime(),
       text,
-      deleteAfter,
+      removeAfter,
       position,
     })}
     class="button"

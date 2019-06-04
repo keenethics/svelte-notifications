@@ -221,3 +221,53 @@ button.button:active {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.4);
 }
+
+.position-select {
+  overflow: hidden;
+  background: #37425f;
+  color: #fff;
+  width: 100%;
+  height: 40px;
+  margin: 0 0 16px;
+  padding: 0;
+  border-radius: 6px;
+  border: 2px solid #4d6deb;
+  overflow: hidden;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.position-select-row {
+  border-bottom: 1px solid #4d6deb;
+  height: 50%;
+}
+
+.position-select-row:last-child {
+  border-bottom: none;
+}
+
+.position-select button {
+  border: none;
+  border-left: 1px solid #4d6deb;
+  border-right: 1px solid #4d6deb;
+  background: none;
+  color: #fff;
+  width: 33.33%;
+  height: 100%;
+  float: left;
+  cursor: pointer;
+}
+
+.position-select button:first-child,
+.position-select button:last-child {
+  border-left: none;
+  border-right: none;
+}
+
+.position-select button:hover {
+  background: #434c66;
+}
+
+.position-select button.active {
+  background: #4d6deb;
+}

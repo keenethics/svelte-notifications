@@ -3,14 +3,14 @@
 
   import getContext from '../getContext';
 
-  export let notification;
+  export let notification = null;
 
-  const { id, deleteAfter } = notification;
+  const { id, removeAfter } = notification;
 
   const { remove } = getContext();
 
-  const deleteNotifications = () => remove(id);
-  const timeout = setTimeout(() => deleteNotifications(), deleteAfter || 4000);
+  const removeNotifications = () => remove(id);
+  const timeout = setTimeout(removeNotifications, removeAfter || 4000);
 
   onDestroy(() => {
     if (timeout) clearTimeout(timeout);
@@ -56,7 +56,7 @@
   <div class="notification-context">
     <slot>{notification.text}</slot>
   </div>
-  <button on:click={deleteNotifications}>
+  <button on:click={removeNotifications}>
     &times;
   </button>
 </div>
