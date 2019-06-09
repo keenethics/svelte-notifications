@@ -2,8 +2,12 @@
   import { onDestroy } from 'svelte';
 
   import getContext from '../getContext';
+  import { positions } from '../static.js';
 
-  export let notification = null;
+  export let notification = {
+    id: new Date().getTime(),
+    position: positions[4]
+  };
 
   const { id, removeAfter } = notification;
 

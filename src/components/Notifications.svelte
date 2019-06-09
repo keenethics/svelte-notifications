@@ -5,19 +5,11 @@
 
   import context from '../context';
   import store from '../store';
-
+  import positions from '../static.js';
+  
   export let notificationItem = null;
 
   setContext(context, store);
-
-  const positions = [
-    'top-left',
-    'top-center',
-    'top-right',
-    'bottom-left',
-    'bottom-center',
-    'bottom-right',
-  ];
 
   const getItem = () => notificationItem();
 </script>
