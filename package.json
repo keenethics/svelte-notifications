@@ -39,5 +39,10 @@
     "rollup-plugin-terser": "^5.0.0",
     "sirv-cli": "^0.4.3",
     "svelte": "^3.4.4"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.6.0",
+    "postcss-import": "^12.0.1",
+    "svelte-preprocess-postcss": "^1.0.0"
   }
 }
