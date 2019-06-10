@@ -1,3 +1,7 @@
+<style>
+  @import 'public/global.css';
+</style>
+
 <script>
   import { Notifications } from '../src';
 

@@ -1,3 +1,6 @@
+<style>
+  @import 'public/notification.css';
+</style>
 <script>
   import Notification from './Notification.svelte';
 
@@ -21,44 +24,6 @@
 
   const getItem = () => notificationItem();
 </script>
-
-<style>
-  .notification-top-left,
-  .notification-top-center,
-  .notification-top-right,
-  .notification-bottom-left,
-  .notification-bottom-center,
-  .notification-bottom-right {
-    position: fixed;
-    width: 270px;
-  }
-  .notification-top-left {
-    top: 0;
-    left: 0;
-  }
-  .notification-top-center {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .notification-top-right {
-    top: 0;
-    right: 0;
-  }
-  .notification-bottom-left {
-    bottom: 0;
-    left: 0;
-  }
-  .notification-bottom-center {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .notification-bottom-right {
-    bottom: 0;
-    right: 0;
-  }
-</style>
 
 <slot></slot>
 <div class="notifications">
