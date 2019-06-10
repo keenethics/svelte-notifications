@@ -78,7 +78,7 @@
     on:click={() => add({
       id: new Date().getTime(),
       text,
-      removeAfter,
+      removeAfter: removeAfter * 1,
       position,
     })}
     class="button"

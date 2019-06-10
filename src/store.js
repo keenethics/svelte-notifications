@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import positions from './static';
+import positions from './positions';
 
 const addNotification = (notification = {
   id: new Date().getTime(),
