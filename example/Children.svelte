@@ -55,16 +55,17 @@ function setPosition() {
       <label for="notification-position">
         Position
       </label>
-      <!-- <div class="position-select">
+      <div class="position-select">
         <div class="position-select-row">
-          <button class="top-left active">&nwarr;</button>
-          <button class="top-center">&uarr;</button>
-          <button class="top-right">&nearr;</button>
+          <button class="top-left {position === "top-left" ? "active" : ""}" id="top-left" on:click={setPosition}>&nwarr;</button>
+          <button class="top-center {position === "top-center" ? "active" : ""}" id="top-center" on:click={setPosition}>&uarr;</button>
+          <button class="top-right {position === "top-right" ? "active" : ""}" id="top-right" on:click={setPosition}>&nearr;</button>
         </div>
         <div class="position-select-row">
-          <button class="bottom-left">&swarr;</button>
-          <button class="bottom-center">&darr;</button>
-          <button class="bottom-right">&searr;</button>
+          <button class="bottom-left {position === "bottom-left" ? "active" : ""}" id="bottom-left" on:click={setPosition}>&swarr;</button>
+          <button class="bottom-center {position === "bottom-center" ? "active" : ""}" id="bottom-center" on:click={setPosition}>&darr;</button>
+          <button class="bottom-right {position === "bottom-right" ? "active": ""}" id="bottom-right" on:click={setPosition}>&searr;</button>
+        </div>
         </div>
       </div> -->
       <div class="select">
