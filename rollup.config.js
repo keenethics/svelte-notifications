@@ -3,6 +3,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
+import postcss from 'svelte-preprocess-postcss';
 
 import pkg from './package.json';
 
@@ -11,6 +12,8 @@ const name = pkg.name
   .replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
   .replace(/^\w/, m => m.toUpperCase())
   .replace(/-\w/g, m => m[1].toUpperCase());
+
+const stylePreprocessor = postcss({});
 
 const config = production ? ({
   input: 'src/index.js',
@@ -26,10 +29,16 @@ const config = production ? ({
     },
   ],
   plugins: [
-    svelte(),
+    svelte({
+      preprocess: {
+        style: stylePreprocessor,
+      },
+      css: css => css.write('build/bundle.css'),
+    }),
     resolve({
       browser: true,
     }),
+    terser(),
   ],
 }) : ({
   input: 'example/index.js',
@@ -46,8 +55,7 @@ const config = production ? ({
     }),
     resolve(),
     commonjs(),
-    !production && livereload('public'),
-    production && terser(),
+    livereload('public'),
   ],
 });
 
