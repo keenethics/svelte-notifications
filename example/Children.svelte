@@ -66,9 +66,8 @@ function setPosition() {
           <button class="bottom-center {position === "bottom-center" ? "active" : ""}" id="bottom-center" on:click={setPosition}>&darr;</button>
           <button class="bottom-right {position === "bottom-right" ? "active": ""}" id="bottom-right" on:click={setPosition}>&searr;</button>
         </div>
-        </div>
-      </div> -->
-      <div class="select">
+      </div>
+      <!-- <div class="select">
         <select id="position" bind:value={position}>
           <option value="top-left">Top left</option>
           <option value="top-center">Top center</option>
@@ -77,7 +76,7 @@ function setPosition() {
           <option value="bottom-center">Bottom center</option>
           <option value="bottom-right">Bottom right</option>
         </select>
-      </div>
+      </div> -->
     </div>
   </div>
   <button
