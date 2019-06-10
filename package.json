@@ -44,5 +44,15 @@
     "autoprefixer": "^9.6.0",
     "postcss-import": "^12.0.1",
     "svelte-preprocess-postcss": "^1.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/keenethics/svelte-notifications.git"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ]
 }

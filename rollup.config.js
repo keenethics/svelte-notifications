@@ -7,7 +7,7 @@ import postcss from 'svelte-preprocess-postcss';
 
 import pkg from './package.json';
 
-const production = true; // !process.env.ROLLUP_WATCH;
+const production = !process.env.ROLLUP_WATCH;
 const name = pkg.name
   .replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
   .replace(/^\w/, m => m.toUpperCase())
@@ -38,6 +38,7 @@ const config = production ? ({
     resolve({
       browser: true,
     }),
+    terser(),
   ],
 }) : ({
   input: 'example/index.js',
@@ -54,8 +55,7 @@ const config = production ? ({
     }),
     resolve(),
     commonjs(),
-    !production && livereload('public'),
-    production && terser(),
+    livereload('public'),
   ],
 });
 

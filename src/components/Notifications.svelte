@@ -1,5 +1,4 @@
 <style>
-  @import 'public/global.css';
   @import 'public/notification.css';
 </style>
 <script>
