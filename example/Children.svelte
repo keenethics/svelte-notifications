@@ -9,6 +9,11 @@
     add,
     clear,
   } = getContext();
+
+function setPosition() {
+  position = this.id;
+  console.log(this.classList[0])
+}
 </script>
 
 <div class="example">
