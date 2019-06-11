@@ -9,6 +9,11 @@
     add,
     clear,
   } = getContext();
+
+function setPosition() {
+  position = this.id;
+  console.log(this.classList[0])
+}
 </script>
 
 <div class="example">
@@ -50,19 +55,19 @@
       <label for="notification-position">
         Position
       </label>
-      <!-- <div class="position-select">
+      <div class="position-select">
         <div class="position-select-row">
-          <button class="top-left active">&nwarr;</button>
-          <button class="top-center">&uarr;</button>
-          <button class="top-right">&nearr;</button>
+          <button class="top-left {position === "top-left" ? "active" : ""}" id="top-left" on:click={setPosition}>&nwarr;</button>
+          <button class="top-center {position === "top-center" ? "active" : ""}" id="top-center" on:click={setPosition}>&uarr;</button>
+          <button class="top-right {position === "top-right" ? "active" : ""}" id="top-right" on:click={setPosition}>&nearr;</button>
         </div>
         <div class="position-select-row">
-          <button class="bottom-left">&swarr;</button>
-          <button class="bottom-center">&darr;</button>
-          <button class="bottom-right">&searr;</button>
+          <button class="bottom-left {position === "bottom-left" ? "active" : ""}" id="bottom-left" on:click={setPosition}>&swarr;</button>
+          <button class="bottom-center {position === "bottom-center" ? "active" : ""}" id="bottom-center" on:click={setPosition}>&darr;</button>
+          <button class="bottom-right {position === "bottom-right" ? "active": ""}" id="bottom-right" on:click={setPosition}>&searr;</button>
         </div>
-      </div> -->
-      <div class="select">
+      </div>
+      <!-- <div class="select">
         <select id="position" bind:value={position}>
           <option value="top-left">Top left</option>
           <option value="top-center">Top center</option>
@@ -71,7 +76,7 @@
           <option value="bottom-center">Bottom center</option>
           <option value="bottom-right">Bottom right</option>
         </select>
-      </div>
+      </div> -->
     </div>
   </div>
   <button
