@@ -5,15 +5,13 @@
   let removeAfter = 4000;
   let position = 'bottom-center';
 
-  const {
-    add,
-    clear,
-  } = getContext();
+  const { add, clear } = getContext();
 
-function setPosition() {
-  position = this.id;
-  console.log(this.classList[0])
-}
+  const setPosition = ({ target }) => {
+    if (target && target.id) {
+      position = target.id;
+    }
+  }
 </script>
 
 <div class="example">
@@ -21,7 +19,7 @@ function setPosition() {
     <h1>
       Svelte notifications
       <a
-        href="/"
+        href="https://github.com/keenethics/svelte-notifications"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -67,23 +65,13 @@ function setPosition() {
           <button class="bottom-right {position === "bottom-right" ? "active": ""}" id="bottom-right" on:click={setPosition}>&searr;</button>
         </div>
       </div>
-      <!-- <div class="select">
-        <select id="position" bind:value={position}>
-          <option value="top-left">Top left</option>
-          <option value="top-center">Top center</option>
-          <option value="top-right">Top right</option>
-          <option value="bottom-left">Bottom left</option>
-          <option value="bottom-center">Bottom center</option>
-          <option value="bottom-right">Bottom right</option>
-        </select>
-      </div> -->
     </div>
   </div>
   <button
     on:click={() => add({
       id: new Date().getTime(),
       text,
-      removeAfter: removeAfter * 1,
+      removeAfter,
       position,
     })}
     class="button"

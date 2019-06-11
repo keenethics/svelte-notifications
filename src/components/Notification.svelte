@@ -46,6 +46,8 @@
     position: positions[4]
   };
 
+  let timeout = null;
+
   const { id, removeAfter } = notification;
 
   const { remove } = getContext();
@@ -53,7 +55,7 @@
   const removeNotifications = () => remove(id);
 
   if (removeAfter) {
-    const timeout = setTimeout(removeNotifications, removeAfter);
+    timeout = setTimeout(removeNotifications, removeAfter);
   }
 
   onDestroy(() => {

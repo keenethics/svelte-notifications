@@ -5,11 +5,12 @@ const addNotification = (notification = {
   id: new Date().getTime(),
   position: positions[4],
 }, update) => {
+  console.log(notification);
   if (!notification || typeof notification !== 'object') return;
   if (!notification.text) return;
   if (typeof notification.text !== 'string') return;
   if (typeof notification.position !== 'string' || !positions.some(pos => pos === notification.position)) return;
-  if (typeof notification.removeAfter !== 'number') return;
+  if (notification.removeAfter) notification.removeAfter = +notification.removeAfter;
   if (!notification.id) notification.id = new Date().getTime();
 
   update((notifications) => {

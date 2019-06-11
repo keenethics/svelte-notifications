@@ -85,20 +85,6 @@ body {
   width: 12.5%;
 }
 
-@media all and (max-width: 680px) {
-  .row {
-    margin: 0;
-  }
-  .col-1-3 {
-    width: 100%;
-    padding: 0;
-  }
-  .col-1-4 {
-    width: 100%;
-    padding: 0;
-  }
-}
-
 label {
   font-size: 16px;
   display: block;
@@ -270,4 +256,24 @@ button.button:active {
 
 .position-select button.active {
   background: #4d6deb;
+}
+
+@media all and (max-width: 680px) {
+  .row {
+    margin: 0;
+  }
+
+  .col-1-3 {
+    width: 100%;
+    padding: 0;
+  }
+
+  .col-1-4 {
+    width: 100%;
+    padding: 0;
+  }
+
+  .position-select {
+    height: 60px;
+  }
 }
