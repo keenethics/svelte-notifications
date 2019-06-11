@@ -116,6 +116,7 @@ button.button {
   border: none;
   cursor: pointer;
 }
+
 button.button.secondary {
   background: #37425f;
 }
@@ -123,54 +124,9 @@ button.button.secondary {
 input[type="text"]:focus, button.button:focus {
   box-shadow: 0 0 0 2px #37425f;
 }
+
 button.button:active {
   background: #434c66;
-}
-
-.select {
-  background: #37425f;
-  color: #fff;
-  width: 100%;
-  height: 40px;
-  margin: 0 0 16px;
-  padding: 0;
-  border-radius: 6px;
-  border: 2px solid #4d6deb;
-  overflow: hidden;
-  box-sizing: border-box;
-  outline: none;
-}
-
-.select select {
-  color: #fff;
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  font-size: 18px;
-  width: 100%;
-  height: 100%;
-  padding: 0 0 0 5px;
-  box-shadow: none;
-  background-color: transparent;
-  background-image: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
-  border: none;
-}
-
-.select select:focus {
-  outline: none;
-  border: none;
-}
-
-.select select:-moz-focusring {
-  color: transparent;
-  text-shadow: 0 0 0 #fff;
-}
-
-.select select option {
-  outline: none;
-  border: none;
 }
 
 .example {

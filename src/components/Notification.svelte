@@ -43,7 +43,7 @@
 
   export let notification = {
     id: new Date().getTime(),
-    position: positions[4]
+    position: positions[4],
   };
 
   let timeout = null;

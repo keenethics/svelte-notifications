@@ -13,7 +13,7 @@ const name = pkg.name
   .replace(/^\w/, m => m.toUpperCase())
   .replace(/-\w/g, m => m[1].toUpperCase());
 
-const stylePreprocessor = postcss({});
+const stylePreprocessor = postcss();
 
 const config = production ? ({
   input: 'src/index.js',

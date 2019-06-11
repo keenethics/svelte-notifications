@@ -53,8 +53,6 @@
   export let notificationItem = null;
 
   setContext(context, store);
-
-  const getItem = () => notificationItem();
 </script>
 
 <slot></slot>
