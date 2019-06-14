@@ -39,12 +39,8 @@
   import { onDestroy } from 'svelte';
 
   import getContext from '../getContext';
-  import positions from '../positions';
 
-  export let notification = {
-    id: new Date().getTime(),
-    position: positions[4],
-  };
+  export let notification;
 
   let timeout = null;
 
