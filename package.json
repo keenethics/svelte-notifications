@@ -21,7 +21,7 @@
     "dev": "run-p start:dev autobuild",
     "start": "sirv public",
     "start:dev": "sirv public --dev",
-    "lint": "eslint ./src --ext .js,.svelte; true"
+    "lint": "eslint ./src --ext .js,.svelte"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.0",
