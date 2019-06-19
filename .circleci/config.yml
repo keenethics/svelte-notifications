@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  run-checks:
+    docker: # use the docker executor type; machine and macos executors are also supported
+      - image: node:lts-alpine
+    steps:
+      - checkout # check out the code in the project directory
+      - run:
+          name: Install  dependencies
+          command: npm install
+      - run:
+          name: Check code with eslint
+          command: npm run lint
+workflows:
+  version: 2
+  stack:
+    jobs:
+      - run-checks
