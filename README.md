@@ -1,17 +1,43 @@
 # Svelte notifications
-## Get started
 
-Install the dependencies...
+Simple and flexible notifications system
 
-```bash
-cd svelte-app
-npm install
-```
-
-...then start [Rollup](https://rollupjs.org):
+## Getting started
 
 ```bash
-npm run dev
+npm install --save svelte-notifications
 ```
 
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+## Usage
+
+```javascript
+// MainComponent.svelte
+
+<script>
+  import Notifications from 'svelte-notifications';
+
+  import App from './App.svelte';
+</script>
+
+<Notifications>
+  <App />
+</Notifications>
+```
+
+```javascript
+// ChildrenComponent.svelte
+
+<script>
+  import { getNotificationsContext } from 'svelte-notifications';
+
+  const { addNotification } = getNotificationsContext();
+</script>
+
+<button
+  on:click={() => addNotification({
+    text: 'Notification',
+  })}
+>
+  Add notification
+</button>
+```

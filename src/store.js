@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store';
+
 import positions from './positions';
 
 const isNotificationValid = notification => {
@@ -42,9 +43,9 @@ const createNotificationsStore = () => {
 
   return {
     subscribe,
-    add: notification => addNotification(notification, update),
-    remove: notificationId => removeNotification(notificationId, update),
-    clear: () => clearNotifications(set),
+    addNotification: notification => addNotification(notification, update),
+    removeNotification: notificationId => removeNotification(notificationId, update),
+    clearNotifications: () => clearNotifications(set),
   };
 };
 

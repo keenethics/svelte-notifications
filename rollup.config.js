@@ -1,4 +1,5 @@
 import autoprefixer from 'autoprefixer';
+
 import svelte from 'rollup-plugin-svelte';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
@@ -9,6 +10,13 @@ import preprocess from 'svelte-preprocess';
 
 import pkg from './package.json';
 
+const preprocessOptions = {
+  postcss: {
+    plugins: [
+      autoprefixer,
+    ],
+  },
+};
 const production = !process.env.ROLLUP_WATCH;
 const name = pkg.name
   .replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
@@ -21,22 +29,18 @@ const config = production ? ({
     {
       file: pkg.module,
       format: 'es',
+      exports: 'named',
     },
     {
       file: pkg.main,
       format: 'umd',
       name,
+      exports: 'named',
     },
   ],
   plugins: [
     svelte({
-      preprocess: preprocess({
-        postcss: {
-          plugins: [
-            autoprefixer,
-          ],
-        },
-      }),
+      preprocess: preprocess(preprocessOptions),
       css: css => css.write('build/bundle.css'),
     }),
     resolve({
@@ -55,6 +59,7 @@ const config = production ? ({
   plugins: [
     svelte({
       dev: !production,
+      preprocess: preprocess(preprocessOptions),
       css: css => css.write('public/bundle.css'),
     }),
     resolve(),

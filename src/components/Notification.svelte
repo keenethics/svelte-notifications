@@ -9,7 +9,7 @@
     border-radius: 6px;
   }
 
-  .notification-context {
+  .notification-content {
     width: 210px;
     padding: 12px 6px 12px 12px;
     box-sizing: border-box;
@@ -37,21 +37,19 @@
 </style>
 <script>
   import { onDestroy } from 'svelte';
-
-  import getContext from '../getContext';
+  import { getNotificationsContext } from '../context';
 
   export let notification;
 
-  let timeout = null;
-
+  const { removeNotification } = getNotificationsContext();
   const { id, removeAfter } = notification;
 
-  const { remove } = getContext();
+  const removeNotificationHandler = () => removeNotification(id);
 
-  const removeNotifications = () => remove(id);
+  let timeout = null;
 
   if (removeAfter) {
-    timeout = setTimeout(removeNotifications, removeAfter);
+    timeout = setTimeout(removeNotificationHandler, removeAfter);
   }
 
   onDestroy(() => {
@@ -59,11 +57,11 @@
   });
 </script>
 
-<div class="notification">
-  <div class="notification-context">
+<div class="notification" role="status" aria-live="polite">
+  <div class="notification-content">
     <slot>{notification.text}</slot>
   </div>
-  <button on:click={removeNotifications}>
+  <button on:click={removeNotificationHandler} aria-label="delete notification">
     &times;
   </button>
 </div>

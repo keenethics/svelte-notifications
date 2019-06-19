@@ -1,56 +1,56 @@
 <style>
-  .notification-top-left,
-  .notification-top-center,
-  .notification-top-right,
-  .notification-bottom-left,
-  .notification-bottom-center,
-  .notification-bottom-right {
+  .position-top-left,
+  .position-top-center,
+  .position-top-right,
+  .position-bottom-left,
+  .position-bottom-center,
+  .position-bottom-right {
     position: fixed;
     width: 270px;
   }
 
-  .notification-top-left {
+  .position-top-left {
     top: 0;
     left: 0;
   }
 
-  .notification-top-center {
+  .position-top-center {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  .notification-top-right {
+  .position-top-right {
     top: 0;
     right: 0;
   }
 
-  .notification-bottom-left {
+  .position-bottom-left {
     bottom: 0;
     left: 0;
   }
 
-  .notification-bottom-center {
+  .position-bottom-center {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  .notification-bottom-right {
+  .position-bottom-right {
     bottom: 0;
     right: 0;
   }
 </style>
 <script>
-  import Notification from './Notification.svelte';
-
   import { setContext } from 'svelte';
+
+  import Notification from './Notification.svelte';
 
   import context from '../context';
   import store from '../store';
   import positions from '../positions';
 
-  export let notificationItem = null;
+  export let item = null;
 
   setContext(context, store);
 </script>
@@ -58,16 +58,18 @@
 <slot></slot>
 <div class="notifications">
   {#each positions as position}
-    <div class={`notification-${position}`}>
-      {#each $store as notification (notification.id)}
-        {#if notification.position === position}
-          {#if notificationItem}
-            <svelte:component this={notificationItem} {notification}/>
-          {:else}
-            <Notification {notification}/>
+    <div class={`position-${position}`}>
+      <div>
+        {#each $store as notification (notification.id)}
+          {#if notification.position === position}
+            {#if item}
+              <svelte:component this={item} {notification}/>
+            {:else}
+              <Notification {notification}/>
+            {/if}
           {/if}
-        {/if}
-      {/each}
+        {/each}
+      </div>
     </div>
   {/each}
 </div>

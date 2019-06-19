@@ -1,16 +1,15 @@
 <script>
   import { onDestroy } from 'svelte';
 
-  import getContext from '../src/getContext';
+  import { getNotificationsContext } from '../src/context';
 
   export let notification;
 
+  const { removeNotification } = getNotificationsContext();
   const { id, deleteAfter } = notification;
 
-  const { remove } = getContext();
-
-  const deleteNotifications = () => remove(id);
-  const timeout = setTimeout(() => deleteNotifications(), deleteAfter || 4000);
+  const removeNotificationHandler = () => removeNotification(id);
+  const timeout = setTimeout(() => removeNotificationHandler(), deleteAfter || 4000);
 
   onDestroy(() => {
     if (timeout) clearTimeout(timeout);
@@ -26,12 +25,18 @@
     background: #fff;
     color: #000;
     border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   }
-  .notification-context {
+  .notification-content {
     width: 210px;
     padding: 12px 6px 12px 12px;
     box-sizing: border-box;
     word-wrap:break-word;
+  }
+  .notification-content p {
+    font-size: 14px;
+    color: #a1a1a1;
+    margin: 2px 0 0;
   }
   button {
     display: block;
@@ -53,11 +58,11 @@
 </style>
 
 <div class="notification">
-  <div class="notification-context">
+  <div class="notification-content">
     <slot>{notification.text}</slot>
-    <p>{notification.description || 'Description'}</p>
+    <p>{notification.description || 'Custom description'}</p>
   </div>
-  <button on:click={deleteNotifications}>
+  <button on:click={removeNotificationHandler}>
     &times;
   </button>
 </div>

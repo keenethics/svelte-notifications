@@ -1,11 +1,14 @@
 <script>
-  import { getContext } from '../src';
+  import { getNotificationsContext } from '../src';
 
   let text = 'Notification';
   let removeAfter = 4000;
   let position = 'bottom-center';
 
-  const { add, clear } = getContext();
+  const {
+    addNotification,
+    clearNotifications,
+  } = getNotificationsContext();
 
   const setPosition = ({ target }) => {
     if (target && target.id) {
@@ -68,7 +71,7 @@
     </div>
   </div>
   <button
-    on:click={() => add({
+    on:click={() => addNotification({
       id: new Date().getTime(),
       text,
       removeAfter,
@@ -79,7 +82,7 @@
     Create
   </button>
   <button
-    on:click={() => clear()}
+    on:click={() => clearNotifications()}
     class="button secondary"
   >
     Clear all
