@@ -54,8 +54,8 @@
     const defaultSyffix = suffix ? `-${suffix}` : '';
     const defaultNotificationClass = ` default-notification-style${defaultSyffix}`;
 
-    return `notification${defaultSyffix}${withoutStyles ? '' : defaultNotificationClass}`
-  }
+    return `notification${defaultSyffix}${withoutStyles ? '' : defaultNotificationClass}`;
+  };
   const removeNotificationHandler = () => removeNotification(id);
 
   let timeout = null;

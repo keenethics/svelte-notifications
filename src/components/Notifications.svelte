@@ -56,8 +56,8 @@
   const getClass = (position = '') => {
     const defaultPositionClass = ` default-position-style-${position}`;
 
-    return `position-${position}${withoutStyles ? '' : defaultPositionClass}`
-  }
+    return `position-${position}${withoutStyles ? '' : defaultPositionClass}`;
+  };
 
   setContext(context, store);
 </script>
