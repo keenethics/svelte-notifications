@@ -1,5 +1,5 @@
 <style>
-  .notification {
+  .default-notification-style {
     display: flex;
     align-items: stretch;
     justify-content: space-between;
@@ -7,16 +7,17 @@
     background: #fff;
     color: #000;
     border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   }
 
-  .notification-content {
+  .default-notification-style-content {
     width: 210px;
     padding: 12px 6px 12px 12px;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 
-  button {
+  .default-notification-style-button {
     display: block;
     width: 40px;
     padding: 0 0 2px;
@@ -31,7 +32,7 @@
     box-sizing: border-box;
   }
 
-  button:hover {
+  .default-notification-style-button:hover {
     background: rgba(0, 0, 0, 0.01);
   }
 </style>
@@ -39,11 +40,22 @@
   import { onDestroy } from 'svelte';
   import { getNotificationsContext } from '../context';
 
-  export let notification;
+  export let notification = {};
+  export let withoutStyles = false;
 
   const { removeNotification } = getNotificationsContext();
-  const { id, removeAfter } = notification;
+  const {
+    id,
+    text,
+    removeAfter,
+  } = notification;
 
+  const getClass = (suffix) => {
+    const defaultSyffix = suffix ? `-${suffix}` : '';
+    const defaultNotificationClass = ` default-notification-style${defaultSyffix}`;
+
+    return `notification${defaultSyffix}${withoutStyles ? '' : defaultNotificationClass}`
+  }
   const removeNotificationHandler = () => removeNotification(id);
 
   let timeout = null;
@@ -57,11 +69,15 @@
   });
 </script>
 
-<div class="notification" role="status" aria-live="polite">
-  <div class="notification-content">
-    <slot>{notification.text}</slot>
+<div class={getClass()} role="status" aria-live="polite">
+  <div class={getClass('content')}>
+    <slot>{text}</slot>
   </div>
-  <button on:click={removeNotificationHandler} aria-label="delete notification">
+  <button
+    class={getClass('button')}
+    on:click={removeNotificationHandler}
+    aria-label="delete notification"
+  >
     &times;
   </button>
 </div>

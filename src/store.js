@@ -11,7 +11,7 @@ const isNotificationValid = notification => {
 };
 
 const addNotification = (notification, update) => {
-  if (!isNotificationValid(notification)) throw new Error('');
+  if (!isNotificationValid(notification)) throw new Error('Notification object is not valid');
 
   const {
     id = new Date().getTime(),

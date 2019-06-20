@@ -1,42 +1,42 @@
 <style>
-  .position-top-left,
-  .position-top-center,
-  .position-top-right,
-  .position-bottom-left,
-  .position-bottom-center,
-  .position-bottom-right {
+  .default-position-style-top-left,
+  .default-position-style-top-center,
+  .default-position-style-top-right,
+  .default-position-style-bottom-left,
+  .default-position-style-bottom-center,
+  .default-position-style-bottom-right {
     position: fixed;
     width: 270px;
   }
 
-  .position-top-left {
+  .default-position-style-top-left {
     top: 0;
     left: 0;
   }
 
-  .position-top-center {
+  .default-position-style-top-center {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  .position-top-right {
+  .default-position-style-top-right {
     top: 0;
     right: 0;
   }
 
-  .position-bottom-left {
+  .default-position-style-bottom-left {
     bottom: 0;
     left: 0;
   }
 
-  .position-bottom-center {
+  .default-position-style-bottom-center {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  .position-bottom-right {
+  .default-position-style-bottom-right {
     bottom: 0;
     right: 0;
   }
@@ -51,6 +51,13 @@
   import positions from '../positions';
 
   export let item = null;
+  export let withoutStyles = false;
+
+  const getClass = (position = '') => {
+    const defaultPositionClass = ` default-position-style-${position}`;
+
+    return `position-${position}${withoutStyles ? '' : defaultPositionClass}`
+  }
 
   setContext(context, store);
 </script>
@@ -58,14 +65,14 @@
 <slot></slot>
 <div class="notifications">
   {#each positions as position}
-    <div class={`position-${position}`}>
+    <div class={getClass(position)}>
       <div>
         {#each $store as notification (notification.id)}
           {#if notification.position === position}
             {#if item}
               <svelte:component this={item} {notification}/>
             {:else}
-              <Notification {notification}/>
+              <Notification {notification} {withoutStyles}/>
             {/if}
           {/if}
         {/each}

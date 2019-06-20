@@ -25,7 +25,7 @@
     background: #fff;
     color: #000;
     border-radius: 6px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   }
   .notification-content {
     width: 210px;
