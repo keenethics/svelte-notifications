@@ -39,6 +39,7 @@ npm install --save svelte-notifications
 <button
   on:click={() => addNotification({
     text: 'Notification',
+    position: 'bottom-center',
   })}
 >
   Add notification
