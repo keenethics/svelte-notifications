@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Check code with eslint
           command: npm run lint
-      -run: 
+      - run: 
           name: Run the server
           command: npm run dev
       - run:
