@@ -21,10 +21,13 @@
     "dev": "run-p start:dev autobuild",
     "start": "sirv public",
     "start:dev": "sirv public --dev",
-    "lint": "eslint ./src --ext .js,.svelte"
+    "lint": "eslint ./src --ext .js,.svelte",
+    "cypress:open": "cypress open",
+    "test:run": "cypress run"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.0",
+    "cypress": "^3.4.0",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.17.3",
@@ -32,6 +35,7 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-svelte3": "^1.2.3",
+    "faker": "^4.1.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^7.0.17",
     "rollup": "^1.15.6",

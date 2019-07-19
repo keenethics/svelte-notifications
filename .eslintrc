@@ -11,6 +11,17 @@
   "plugins": [
     "svelte3"
   ],
+  "globals": {
+    "afterAll": true,
+    "afterEach": true,
+    "beforeAll": true,
+    "beforeEach": true,
+    "describe": true,
+    "expect": true,
+    "it": true,
+    "cy": true,
+    "Cypress": true
+  },
   "rules": {
     "import/first": "off",
     "semi": [2, "always"],
