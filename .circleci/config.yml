@@ -11,11 +11,6 @@ jobs:
       - run:
           name: Check code with eslint
           command: npm run lint
-  run-e2e:
-    docker: # use the docker executor type; machine and macos executors are also supported
-      - image: node:lts-alpine
-    steps:
-      - checkout # check out the code in the project directory
       -run: 
           name: Run the server
           command: npm run dev
@@ -27,4 +22,3 @@ workflows:
   stack:
     jobs:
       - run-checks
-      - run-e2e
