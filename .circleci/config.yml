@@ -13,7 +13,7 @@ jobs:
           command: npm run lint
       - run:
           name: Run end-to-end tests
-          command: npm run dev & cypress run
+          command: npm run dev & test:run
 workflows:
   version: 2
   stack:
