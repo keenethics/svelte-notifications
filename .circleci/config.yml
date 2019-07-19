@@ -11,6 +11,9 @@ jobs:
       - run:
           name: Check code with eslint
           command: npm run lint
+      - run:
+          name: Run end-to-end tests
+          command: npm run dev & cypress run
 workflows:
   version: 2
   stack:
