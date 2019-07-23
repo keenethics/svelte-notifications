@@ -2,7 +2,7 @@ version: 2
 jobs:
   run-checks:
     docker: # use the docker executor type; machine and macos executors are also supported
-      - image: cypress/base:lts-alpine
+      - image: cypress/base:8
     steps:
       - checkout # check out the code in the project directory
       - run:
