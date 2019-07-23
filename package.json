@@ -23,7 +23,8 @@
     "start:dev": "sirv public --dev",
     "lint": "eslint ./src --ext .js,.svelte",
     "cypress:open": "cypress open",
-    "test:run": "cypress run"
+    "test:run": "cypress run",
+    "ci": "start-server-and-test dev http://localhost:5000 test:run"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.0",
@@ -46,6 +47,7 @@
     "rollup-plugin-svelte": "^5.1.0",
     "rollup-plugin-terser": "^5.1.1",
     "sirv-cli": "^0.4.4",
+    "start-server-and-test": "^1.9.1",
     "svelte": "^3.6.7",
     "svelte-preprocess": "^2.15.0"
   },

@@ -11,13 +11,9 @@ jobs:
       - run:
           name: Check code with eslint
           command: npm run lint
-      - run: 
-          name: Run the server
-          command: npm run dev
-          background: true
       - run:
           name: Run end-to-end tests
-          command:  npm run test:run
+          command:  npm run ci
 workflows:
   version: 2
   stack:
