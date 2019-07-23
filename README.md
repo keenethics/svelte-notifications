@@ -5,6 +5,10 @@
 
 Simple and flexible notifications system
 
+## Demonstration
+
+[https://svelte-notifications.netlify.com](https://svelte-notifications.netlify.com)
+
 ## Getting started
 
 ```bash
