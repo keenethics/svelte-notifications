@@ -1,9 +1,10 @@
 # Svelte notifications
 
-![version](https://img.shields.io/npm/v/svelte-notifications.svg)
+![build](https://img.shields.io/circleci/build/github/keenethics/svelte-notifications/master.svg)
+![version](https://img.shields.io/github/package-json/v/keenethics/svelte-notifications.svg)
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 
-Simple and flexible notifications system
+Simple and flexible notifications system for Svelte 3
 
 ## Demonstration
 
