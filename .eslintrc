@@ -9,7 +9,8 @@
   },
   "extends": "standard",
   "plugins": [
-    "svelte3"
+    "svelte3",
+    "cypress"
   ],
   "overrides": [
     {
