@@ -2,7 +2,7 @@ version: 2
 jobs:
   run-checks:
     docker: # use the docker executor type; machine and macos executors are also supported
-      - image: node:lts-alpine
+      - image: cypress/base:10.15.3
     steps:
       - checkout # check out the code in the project directory
       - run:
@@ -11,6 +11,9 @@ jobs:
       - run:
           name: Check code with eslint
           command: npm run lint
+      - run:
+          name: Run end-to-end tests
+          command:  npm run ci
 workflows:
   version: 2
   stack:
