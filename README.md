@@ -139,7 +139,7 @@ You can provide any object that the notification component will receive. The def
 </script>
 ```
 
-#### `getNotificationsContext:cleanNotifications`
+#### `getNotificationsContext:clearNotifications`
 
 ```javascript
 // ChildrenComponent.svelte
@@ -147,9 +147,9 @@ You can provide any object that the notification component will receive. The def
 <script>
   import { getNotificationsContext } from 'svelte-notifications';
 
-  const { cleanNotifications } = getNotificationsContext();
+  const { clearNotifications } = getNotificationsContext();
 
-  cleanNotifications();
+  clearNotifications();
 </script>
 ```
 
