@@ -1,5 +1,6 @@
 <style>
   .default-notification-style {
+    position: relative;
     display: flex;
     align-items: stretch;
     justify-content: space-between;
@@ -8,6 +9,8 @@
     color: #000;
     border-radius: 6px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+		min-height: 0;
+		overflow: hidden;
   }
 
   .default-notification-style-content {
@@ -38,6 +41,8 @@
 </style>
 <script>
   import { onDestroy } from 'svelte';
+  import { fade } from 'svelte/transition';
+
   import { getNotificationsContext } from '../context';
 
   export let notification = {};
@@ -69,7 +74,13 @@
   });
 </script>
 
-<div class={getClass()} role="status" aria-live="polite">
+<div
+	class={getClass()}
+	role="status"
+	aria-live="polite"
+	in:fade
+	out:fade
+>
   <div class={getClass('content')}>
     <slot>{text}</slot>
   </div>
