@@ -6,6 +6,6 @@
   import Children from './Children.svelte';
 </script>
 
-<Notifications item={ItemWithButtons}>
+<Notifications>
   <Children />
 </Notifications>

@@ -72,7 +72,10 @@
             {#if item}
               <svelte:component this={item} {notification}/>
             {:else}
-              <Notification {notification} {withoutStyles}/>
+              <Notification
+                {notification}
+                {withoutStyles}
+              />
             {/if}
           {/if}
         {/each}
