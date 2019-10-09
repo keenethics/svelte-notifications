@@ -53,17 +53,13 @@
     id,
     text,
     removeAfter,
-    position,
   } = notification;
-
-  const positionY = position && position.split('-')[0];
 
   const getClass = (suffix) => {
     const defaultSyffix = suffix ? `-${suffix}` : '';
     const defaultNotificationClass = ` default-notification-style${defaultSyffix}`;
-    const positionClass = ` default-notification-style${defaultSyffix}`;
 
-    return `notification${defaultSyffix}${withoutStyles ? '' : defaultNotificationClass} position-${positionY}`;
+    return `notification${defaultSyffix}${withoutStyles ? '' : defaultNotificationClass}`;
   };
   const removeNotificationHandler = () => removeNotification(id);
 
