@@ -76,6 +76,7 @@
       text,
       removeAfter,
       position,
+      customClass: 'default-custom-class',
     })}
     class="button"
   >

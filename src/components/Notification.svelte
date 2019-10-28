@@ -53,13 +53,15 @@
     id,
     text,
     removeAfter,
+    customClass = '',
   } = notification;
 
   const getClass = (suffix) => {
     const defaultSyffix = suffix ? `-${suffix}` : '';
+    const defaultCustomClass = customClass && !suffix ? `${customClass} ` : '';
     const defaultNotificationClass = ` default-notification-style${defaultSyffix}`;
 
-    return `notification${defaultSyffix}${withoutStyles ? '' : defaultNotificationClass}`;
+    return `${defaultCustomClass}notification${defaultSyffix}${withoutStyles ? '' : defaultNotificationClass}`;
   };
   const removeNotificationHandler = () => removeNotification(id);
 
