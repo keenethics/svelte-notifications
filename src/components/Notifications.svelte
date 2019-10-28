@@ -66,20 +66,18 @@
 <div class="notifications">
   {#each positions as position}
     <div class={getClass(position)}>
-      <div>
-        {#each $store as notification (notification.id)}
-          {#if notification.position === position}
-            {#if item}
-              <svelte:component this={item} {notification}/>
-            {:else}
-              <Notification
-                {notification}
-                {withoutStyles}
-              />
-            {/if}
+      {#each $store as notification (notification.id)}
+        {#if notification.position === position}
+          {#if item}
+            <svelte:component this={item} {notification}/>
+          {:else}
+            <Notification
+              {notification}
+              {withoutStyles}
+            />
           {/if}
-        {/each}
-      </div>
+        {/if}
+      {/each}
     </div>
   {/each}
 </div>

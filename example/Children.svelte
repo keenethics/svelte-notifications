@@ -26,7 +26,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        v0.9.7
+        v0.9.8
       </a>
     </h1>
     <p>Extremely simple and flexible notifications for Svelte</p>
