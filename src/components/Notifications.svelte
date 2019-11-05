@@ -45,6 +45,7 @@
   import { setContext } from 'svelte';
 
   import Notification from './Notification.svelte';
+  import DefaultNotification from './DefaultNotification.svelte';
 
   import context from '../context';
   import store from '../store';
@@ -52,8 +53,6 @@
 
   export let item = null;
   export let withoutStyles = false;
-
-  console.log(item);
 
   const getClass = (position = '') => {
     const defaultPositionClass = ` default-position-style-${position}`;
@@ -71,14 +70,11 @@
       <div>
         {#each $store as notification (notification.id)}
           {#if notification.position === position}
-            {#if item}
-              <svelte:component this={item} {notification}/>
-            {:else}
-              <Notification
-                {notification}
-                {withoutStyles}
-              />
-            {/if}
+            <Notification
+              {notification}
+              {withoutStyles}
+              item={item ? item : DefaultNotification}
+            />
           {/if}
         {/each}
       </div>

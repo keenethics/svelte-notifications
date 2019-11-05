@@ -248,6 +248,7 @@ input[type="checkbox"] {
 
 label.label-show-custom {
   margin-bottom: 0;
+  transition: color .3s ease;
 }
 
 .toggle {
@@ -275,4 +276,8 @@ label.label-show-custom {
 
 input[type="checkbox"]:checked + .toggle:after {
   left: calc(100% - 26px);
+}
+
+.label-show-custom.active {
+  color: #fff;
 }

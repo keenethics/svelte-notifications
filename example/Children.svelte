@@ -20,8 +20,11 @@
   }
 
   const toggleCustom = () => {
+    
     showCustom = !showCustom;
     setItem();
+    console.log('toggled to ', showCustom);
+    clearNotifications();
   }
 </script>
 
@@ -80,7 +83,12 @@
     <div class="col col-1-5 show-custom">
       <input type="checkbox" bind:checked={showCustom} id="show-custom">
       <span class="toggle" on:click={toggleCustom}></span>
-      <label for="show-custom" class="label-show-custom">Show custom notification</label>
+      <label
+        for="show-custom"
+        class={`label-show-custom ${showCustom ? 'active' : ''}`}
+      >
+        Show custom notification
+      </label>
     </div>
   </div>
   <button
