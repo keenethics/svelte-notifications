@@ -21,7 +21,7 @@
 
   const toggleCustom = () => {
     showCustom = !showCustom;
-    // setItem();
+    setItem();
   }
 </script>
 

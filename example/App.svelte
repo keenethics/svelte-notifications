@@ -24,6 +24,6 @@
  };
 </script>
 
-<Notifications item>
+<Notifications {item}>
   <Children setItem={setItem} />
 </Notifications>

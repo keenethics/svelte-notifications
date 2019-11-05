@@ -53,6 +53,8 @@
   export let item = null;
   export let withoutStyles = false;
 
+  console.log(item);
+
   const getClass = (position = '') => {
     const defaultPositionClass = ` default-position-style-${position}`;
 
