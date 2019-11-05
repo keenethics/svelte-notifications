@@ -51,6 +51,67 @@ npm install --save svelte-notifications
 </button>
 ```
 
+## Providing custom notification component
+
+```javascript
+// MainComponent.svelte
+
+<script>
+  import Notifications from 'svelte-notifications';
+  import CustomNotification from './CustomNotification.svelte';
+
+  import App from './App.svelte';
+</script>
+
+<Notifications item={CustomNotification}>
+  <App />
+</Notifications>
+```
+
+```javascript
+// CustomNotification.svelte
+
+<script>
+  let notification = {};
+  // `onRemove` function will be passed into your component.
+  let onRemove = null;
+
+  const handleButtonClick = () => {
+    onRemove();
+  }
+</script>
+
+<div class={notification.type === 'error' ? 'error' : ''}>
+  <h4>{notification.heading}</h4>
+  <p>{notification.description}</p>
+  <button on:click={handleButtonClick}>Close me</button>
+</div>
+```
+
+```javascript
+// AnotherComponent.svelte
+
+<script>
+  import { getNotificationsContext } from 'svelte-notifications';
+
+  const { addNotification } = getNotificationsContext();
+
+  const handleButtonClick = () => {
+    addNotification({
+      position: 'bottom-right,
+      heading: 'hi i am custom notification',
+      type: 'error',
+      description: 'lorem ipsum',
+    });
+  }
+</script>
+
+<div>
+  <button on:click={handleButtonClick}>Show notification</button>
+</div>
+```
+
+
 ## API
 
 #### `Notifications`
