@@ -233,3 +233,46 @@ button.button:active {
     height: 60px;
   }
 }
+
+.show-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 16px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+label.label-show-custom {
+  margin-bottom: 0;
+}
+
+.toggle {
+  margin-right: 10px;
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 26px;
+  border: 2px solid #4d6deb;
+  border-radius: 15px;
+  background-color: #37425f;
+}
+
+.toggle:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #4d6deb;
+  transition: left .2s ease;
+}
+
+input[type="checkbox"]:checked + .toggle:after {
+  left: calc(100% - 26px);
+}
