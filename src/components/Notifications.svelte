@@ -67,17 +67,15 @@
 <div class="notifications">
   {#each positions as position}
     <div class={getClass(position)}>
-      <div>
-        {#each $store as notification (notification.id)}
-          {#if notification.position === position}
-            <Notification
-              {notification}
-              {withoutStyles}
-              item={item ? item : DefaultNotification}
-            />
-          {/if}
-        {/each}
-      </div>
+      {#each $store as notification (notification.id)}
+        {#if notification.position === position}
+          <Notification
+            {notification}
+            {withoutStyles}
+            item={item ? item : DefaultNotification}
+          />
+        {/if}
+      {/each}
     </div>
   {/each}
 </div>

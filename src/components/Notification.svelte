@@ -12,6 +12,7 @@
   const {
     id,
     removeAfter,
+    customClass = '',
   } = notification;
 
   const removeNotificationHandler = () => removeNotification(id);

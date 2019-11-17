@@ -1,4 +1,6 @@
 <script>
+  import { fade } from 'svelte/transition';
+
   export let notification;
   export let onRemove = null;
 </script>
@@ -51,7 +53,11 @@
   }
 </style>
 
-<div class="notification">
+<div
+  class="notification"
+  in:fade
+  out:fade  
+>
   <div class="notification-content">
     <slot>{notification.text}</slot>
     <p>{notification.description || 'Custom description'}</p>
