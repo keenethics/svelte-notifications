@@ -27,9 +27,9 @@
     "ci": "start-server-and-test dev http://localhost:5000 test:run"
   },
   "devDependencies": {
-    "autoprefixer": "^9.6.4",
-    "cypress": "^3.4.1",
-    "eslint": "^6.5.1",
+    "autoprefixer": "^9.7.3",
+    "cypress": "^3.7.0",
+    "eslint": "^6.7.2",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-cypress": "^2.7.0",
     "eslint-plugin-import": "^2.17.3",
@@ -39,8 +39,8 @@
     "eslint-plugin-svelte3": "^2.7.3",
     "faker": "^4.1.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^7.0.18",
-    "rollup": "^1.23.1",
+    "postcss": "^7.0.24",
+    "rollup": "^1.27.8",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-livereload": "^1.0.4",
     "rollup-plugin-node-resolve": "^5.2.0",
@@ -48,7 +48,7 @@
     "rollup-plugin-terser": "^5.1.2",
     "sirv-cli": "^0.4.4",
     "start-server-and-test": "^1.10.5",
-    "svelte": "^3.12.1",
+    "svelte": "^3.16.0",
     "svelte-preprocess": "^3.1.2"
   },
   "repository": {
