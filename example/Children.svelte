@@ -20,10 +20,9 @@
   }
 
   const toggleCustom = () => {
-    
     showCustom = !showCustom;
+
     setItem();
-    console.log('toggled to ', showCustom);
     clearNotifications();
   }
 </script>

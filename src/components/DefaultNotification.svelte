@@ -60,11 +60,11 @@
 </script>
 
 <div
-	class={getClass()}
-	role="status"
-	aria-live="polite"
-	in:fade
-	out:fade
+  class={getClass()}
+  role="status"
+  aria-live="polite"
+  in:fade
+  out:fade
 >
   <div class={getClass('content')}>
     <slot>{text}</slot>

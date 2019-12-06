@@ -3,7 +3,7 @@
   import { fade } from 'svelte/transition';
 
   import { getNotificationsContext } from '../context';
-  
+
   export let item;
   export let notification = {};
   export let withoutStyles = false;
@@ -31,5 +31,6 @@
 <svelte:component
   this={item}
   {notification}
+  {withoutStyles}
   onRemove={removeNotificationHandler}
 />

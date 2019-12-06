@@ -249,17 +249,22 @@ input[type="checkbox"] {
 label.label-show-custom {
   margin-bottom: 0;
   transition: color .3s ease;
+  font-size: 14px;
+
+  cursor: pointer;
 }
 
 .toggle {
   margin-right: 10px;
   display: block;
   position: relative;
-  width: 50px;
-  height: 26px;
-  border: 2px solid #4d6deb;
+  width: 40px;
+  height: 22px;
+  border: 1px solid #4d6deb;
   border-radius: 15px;
   background-color: #37425f;
+
+  cursor: pointer;
 }
 
 .toggle:after {
@@ -267,15 +272,16 @@ label.label-show-custom {
   position: absolute;
   left: 0;
   top: 0;
-  width: 26px;
-  height: 26px;
+  width: 16px;
+  height: 16px;
+  margin: 3px;
   border-radius: 50%;
   background-color: #4d6deb;
   transition: left .2s ease;
 }
 
 input[type="checkbox"]:checked + .toggle:after {
-  left: calc(100% - 26px);
+  left: calc(100% - 22px);
 }
 
 .label-show-custom.active {
