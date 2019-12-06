@@ -1,11 +1,19 @@
 <script>
   import Notifications from '../src';
-
-  import ItemWithButtons from './ItemWithButtons.svelte';
-
+  import CustomItem from './CustomItem.svelte';
   import Children from './Children.svelte';
+
+ let item = null;
+
+ const setItem = () => {
+   if (item === null) {
+     item = CustomItem;
+   } else {
+     item = null;
+   }
+ };
 </script>
 
-<Notifications>
-  <Children />
+<Notifications {item}>
+  <Children setItem={setItem} />
 </Notifications>
