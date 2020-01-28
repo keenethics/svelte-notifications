@@ -5,6 +5,7 @@
   let removeAfter = 4000;
   let position = 'bottom-center';
   let showCustom = false;
+  let showDanger = false;
 
   export let setItem = null;
 
@@ -23,6 +24,12 @@
     showCustom = !showCustom;
 
     setItem();
+    clearNotifications();
+  }
+
+  const toggleDanger = () => {
+    showDanger = !showDanger;
+
     clearNotifications();
   }
 </script>
@@ -79,7 +86,9 @@
         </div>
       </div>
     </div>
-    <div class="col col-1-5 show-custom">
+  </div>
+  <div class="additional-tools">
+    <div class="col col-1-3 show-custom">
       <input type="checkbox" bind:checked={showCustom} id="show-custom">
       <span class="toggle" on:click={toggleCustom}></span>
       <label
@@ -89,6 +98,16 @@
         Show custom notification
       </label>
     </div>
+    <div class="col col-1-3 show-custom">
+      <input type="checkbox" bind:checked={showDanger} id="show-custom">
+      <span class="toggle" on:click={toggleDanger}></span>
+      <label
+        for="show-custom"
+        class={`label-show-custom ${showDanger ? 'active' : ''}`}
+      >
+        Show danger notification
+      </label>
+    </div>
   </div>
   <button
     on:click={() => addNotification({
@@ -96,6 +115,7 @@
       text,
       removeAfter,
       position,
+      type: showDanger && 'danger',
       customClass: 'default-custom-class',
     })}
     class="button"

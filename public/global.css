@@ -236,10 +236,7 @@ button.button:active {
 
 .show-custom {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
-  margin-bottom: 16px;
 }
 
 input[type="checkbox"] {
@@ -286,4 +283,12 @@ input[type="checkbox"]:checked + .toggle:after {
 
 .label-show-custom.active {
   color: #fff;
+}
+
+.additional-tools {
+  overflow: hidden;
+  padding: 10px 0;
+  margin: 0 0 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }

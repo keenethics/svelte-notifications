@@ -9,8 +9,8 @@
     color: #000;
     border-radius: 6px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-		min-height: 0;
-		overflow: hidden;
+    min-height: 0;
+    overflow: hidden;
   }
 
   .default-notification-style-content {
@@ -38,6 +38,36 @@
   .default-notification-style-button:hover {
     background: rgba(0, 0, 0, 0.01);
   }
+
+  .default-notification-danger {
+    background: #f3555a;
+    color: #fff;
+  }
+
+  .default-notification-danger .default-notification-style-button {
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+  }
+
+  .default-notification-warning {
+    background: #ffb900;
+    color: #000;
+  }
+
+  .default-notification-warning .default-notification-style-button {
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    color: #000;
+  }
+
+  .default-notification-success {
+    background: #22ce6c;
+    color: #fff;
+  }
+
+  .default-notification-success .default-notification-style-button {
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+  }
 </style>
 <script>
   import { fade } from 'svelte/transition';
@@ -49,13 +79,15 @@
   const {
     id,
     text,
+    type,
   } = notification;
 
   const getClass = (suffix) => {
     const defaultSuffix = suffix ? `-${suffix}` : '';
     const defaultNotificationClass = ` default-notification-style${defaultSuffix}`;
+    const defaultNotificationType = type && !suffix ? ` default-notification-${type}` : '';
 
-    return `notification${defaultSuffix}${withoutStyles ? '' : defaultNotificationClass}`;
+    return `notification${defaultSuffix}${withoutStyles ? '' : defaultNotificationClass}${defaultNotificationType}`;
   };
 </script>
 
