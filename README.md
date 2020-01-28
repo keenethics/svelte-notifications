@@ -6,6 +6,8 @@
 
 Simple and flexible notifications system for Svelte 3
 
+![Svelte Notifications](https://github.com/keenethics/svelte-notifications/blob/media/svelte-notifications-preview.png?raw=true)
+
 ## Demonstration
 
 [https://svelte-notifications.netlify.com](https://svelte-notifications.netlify.com)
@@ -164,6 +166,7 @@ You can provide any object that the notification component will receive. The def
 * @param {string} `[id=timestamp]` - Unique notification identificator
 * @param {string} `text` – Notification text
 * @param {string} `position` – One of these values: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`
+* @param {string} `type` – One of these values: `success`, `warning`, `danger`
 * @param {number} `[removeAfter]` – After how much the notification will disappear (in milliseconds)
 
 ```javascript
@@ -178,6 +181,7 @@ You can provide any object that the notification component will receive. The def
     id: 'uniqNotificationId',
     text: 'Notification',
     position: 'bottom-center',
+    type: 'success',
     removeAfter: 4000,
     ...rest,
   });
