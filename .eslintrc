@@ -22,6 +22,7 @@
   "rules": {
     "import/first": "off",
     "semi": [2, "always"],
-    "comma-dangle": ["error", "always-multiline"]
+    "comma-dangle": ["error", "always-multiline"],
+    "no-multiple-empty-lines": "off"
   }
 }

@@ -1,6 +1,5 @@
 <script>
   import { onDestroy } from 'svelte';
-  import { fade } from 'svelte/transition';
 
   import { getNotificationsContext } from '../context';
 
@@ -12,7 +11,6 @@
   const {
     id,
     removeAfter,
-    customClass = '',
   } = notification;
 
   const removeNotificationHandler = () => removeNotification(id);

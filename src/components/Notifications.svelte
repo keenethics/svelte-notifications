@@ -72,7 +72,7 @@
           <Notification
             {notification}
             {withoutStyles}
-            item={item ? item : DefaultNotification}
+            item={item && DefaultNotification}
           />
         {/if}
       {/each}

@@ -69,6 +69,7 @@
     color: #fff;
   }
 </style>
+
 <script>
   import { fade } from 'svelte/transition';
 
@@ -77,7 +78,6 @@
   export let onRemove = null;
 
   const {
-    id,
     text,
     type,
   } = notification;
