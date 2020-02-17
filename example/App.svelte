@@ -3,10 +3,10 @@
   import CustomItem from './CustomItem.svelte';
   import Children from './Children.svelte';
 
- let item = null;
+  let item = null;
 
- const setItem = () => {
-   if (item === null) {
+ const toggleItemType = () => {
+   if (!item) {
      item = CustomItem;
    } else {
      item = null;
@@ -15,5 +15,5 @@
 </script>
 
 <Notifications {item}>
-  <Children setItem={setItem} />
+  <Children {toggleItemType} />
 </Notifications>

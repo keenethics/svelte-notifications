@@ -117,21 +117,21 @@ describe('Notifications', () => {
       deleteNotification();
     });
 
-    it('Can close Top left notification', () => {
+    it('Can close top left notification', () => {
       cy.get(notificationInput).clear().type(fakeText + 'top left');
       createNotification(positionButtonTopLeft);
       cy.contains(notificationTopLeft, fakeText + 'top left').should('to.exist');
       deleteNotification();
     });
 
-    it('Can close Top right notification', () => {
+    it('Can close top right notification', () => {
       cy.get(notificationInput).clear().type(fakeText + 'top right');
       createNotification(positionButtonTopRight);
       cy.contains(notificationTopRight, fakeText + 'top right').should('to.exist');
       deleteNotification();
     });
 
-    it('Can close Top center notification', () => {
+    it('Can close top center notification', () => {
       cy.get(notificationInput).clear().type(fakeText + 'top center');
       createNotification(positionButtonTopCenter);
       cy.contains(notificationTopCenter, fakeText + 'top center').should('to.exist');
@@ -189,7 +189,7 @@ describe('Notifications', () => {
   describe('Custom notifications are displayed correctly', () => {
     beforeEach(() => {
       cy.visit(Cypress.config().baseUrl);
-      cy.get('.toggle').click();
+      cy.get('.toggle-custom').click();
     });
 
     it('Bottom center custom notification should appear', () => {
@@ -203,7 +203,7 @@ describe('Notifications', () => {
   describe('Custom notifications can be closed', () => {
     beforeEach(() => {
       cy.visit(Cypress.config().baseUrl);
-      cy.get('.toggle').click();
+      cy.get('.toggle-custom').click();
     });
 
     it('Bottom center custom notification can be closed', () => {
@@ -220,7 +220,7 @@ describe('Notifications', () => {
 
     beforeEach(() => {
       cy.visit(Cypress.config().baseUrl);
-      cy.get('.toggle').click();
+      cy.get('.toggle-custom').click();
       cy.get(timerInput).clear().type('50');
     });
 
