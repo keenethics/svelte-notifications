@@ -61,8 +61,6 @@
   };
 
   setContext(context, store);
-
-  $: console.log(item);
 </script>
 
 <slot></slot>
