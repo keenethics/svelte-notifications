@@ -38,7 +38,7 @@
     display: block;
     width: 60px;
     height: 50%;
-    padding: 0 0 2px;
+    padding: 0;
     margin: 0;
     border: none;
     outline: none;
