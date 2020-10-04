@@ -1,24 +1,22 @@
 <script>
-  import { getNotificationsContext } from '../src';
+  import { getNotificationsContext } from "../src";
 
   export let toggleItemType = () => {};
 
-  let text = 'Notification';
+  let text = "Notification";
+  let transition = "fade";
   let removeAfter = 4000;
-  let position = 'bottom-center';
+  let position = "bottom-center";
   let showCustom = false;
   let showDanger = false;
 
-  const {
-    addNotification,
-    clearNotifications,
-  } = getNotificationsContext();
+  const { addNotification, clearNotifications } = getNotificationsContext();
 
   const setPosition = ({ target }) => {
     if (target && target.id) {
       position = target.id;
     }
-  }
+  };
 
   const toggleCustom = () => {
     showCustom = !showCustom;
@@ -27,13 +25,13 @@
 
     toggleItemType();
     clearNotifications();
-  }
+  };
 
   const toggleDanger = () => {
     showDanger = !showDanger;
 
     clearNotifications();
-  }
+  };
 </script>
 
 <div class="example">
@@ -43,8 +41,7 @@
       <a
         href="https://github.com/keenethics/svelte-notifications"
         target="_blank"
-        rel="noopener noreferrer"
-      >
+        rel="noopener noreferrer">
         v0.9.9
       </a>
     </h1>
@@ -52,79 +49,62 @@
   </div>
   <div class="row">
     <div class="col col-1-3">
-      <label for="notification-text">
-        Message
-      </label>
-      <input
-        id="notification-text"
-        type="text"
-        bind:value={text}
-      />
+      <label for="notification-text"> Message </label>
+      <input id="notification-text" type="text" bind:value={text} />
     </div>
     <div class="col col-1-3">
-      <label for="notification-remove-after">
-        Remove after (ms)
-      </label>
+      <label for="notification-remove-after"> Remove after (ms) </label>
       <input
         id="notification-remove-after"
         type="text"
-        bind:value={removeAfter}
-      />
+        bind:value={removeAfter} />
     </div>
     <div class="col col-1-3">
-      <label for="notification-position">
-        Position
-      </label>
+      <label for="notification-position"> Position </label>
       <div class="position-select">
         <div class="position-select-row">
           <button
             class="top-left"
-            class:active={position === "top-left"}
+            class:active={position === 'top-left'}
             id="top-left"
-            on:click={setPosition}
-          >
+            on:click={setPosition}>
             &nwarr;
           </button>
           <button
             class="top-center"
-            class:active={position === "top-center"}
+            class:active={position === 'top-center'}
             id="top-center"
-            on:click={setPosition}
-          >
+            on:click={setPosition}>
             &uarr;
           </button>
           <button
             class="top-right"
-            class:active={position === "top-right"}
+            class:active={position === 'top-right'}
             id="top-right"
-            on:click={setPosition}
-          >
+            on:click={setPosition}>
             &nearr;
           </button>
         </div>
         <div class="position-select-row">
           <button
             class="bottom-left"
-            class:active={position === "bottom-left"}
+            class:active={position === 'bottom-left'}
             id="bottom-left"
-            on:click={setPosition}
-          >
+            on:click={setPosition}>
             &swarr;
           </button>
           <button
             class="bottom-center"
-            class:active={position === "bottom-center"}
+            class:active={position === 'bottom-center'}
             id="bottom-center"
-            on:click={setPosition}
-          >
+            on:click={setPosition}>
             &darr;
           </button>
           <button
             class="bottom-right"
-            class:active={position === "bottom-rigth"}
+            class:active={position === 'bottom-rigth'}
             id="bottom-right"
-            on:click={setPosition}
-          >
+            on:click={setPosition}>
             &searr;
           </button>
         </div>
@@ -133,46 +113,53 @@
   </div>
   <div class="additional-tools">
     <div class="col col-1-3 show-custom">
-      <input type="checkbox" bind:checked={showCustom} id="show-custom">
-      <span class="toggle toggle-custom" on:click={toggleCustom}></span>
+      <input type="checkbox" bind:checked={showCustom} id="show-custom" />
+      <span class="toggle toggle-custom" on:click={toggleCustom} />
       <label
         for="show-custom"
-        class={`label-show-custom ${showCustom ? 'active' : ''}`}
-      >
+        class={`label-show-custom ${showCustom ? 'active' : ''}`}>
         Show custom notification
       </label>
     </div>
     {#if !showCustom}
       <div class="col col-1-3 show-custom">
-        <input type="checkbox" bind:checked={showDanger} id="show-danger">
-        <span class="toggle toggle-danger" on:click={toggleDanger}></span>
+        <input type="checkbox" bind:checked={showDanger} id="show-danger" />
+        <span class="toggle toggle-danger" on:click={toggleDanger} />
         <label
           for="show-danger"
-          class={`label-show-custom ${showDanger ? 'active' : ''}`}
-        >
+          class={`label-show-custom ${showDanger ? 'active' : ''}`}>
           Show danger notification
         </label>
       </div>
     {/if}
+    <div class="col col-1-3">
+      <label for="notification-text">Transition</label>
+      <select id="notification-text" bind:value={transition}>
+        <option value="blur">Blur</option>
+        <option value="crossfade">Crossfade</option>
+        <option value="draw">Draw</option>
+        <option value="fade">Fade</option>
+        <option value="fly">Fly</option>
+        <option value="scale">Scale</option>
+        <option value="slide">Slide</option>
+      </select>
+    </div>
   </div>
   <button
     on:click={() => addNotification({
-      id: new Date().getTime(),
-      text,
-      removeAfter,
-      position,
-      type: showDanger && 'danger',
-      customClass: 'default-custom-class',
-    })}
+        id: new Date().getTime(),
+        text,
+        removeAfter,
+        position,
+        transition,
+        type: showDanger && 'danger',
+        customClass: 'default-custom-class',
+      })}
     class="button"
-    id="create-button"
-  >
+    id="create-button">
     Create
   </button>
-  <button
-    on:click={() => clearNotifications()}
-    class="button secondary"
-  >
+  <button on:click={() => clearNotifications()} class="button secondary">
     Clear all
   </button>
 </div>

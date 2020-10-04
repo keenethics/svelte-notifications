@@ -1,11 +1,13 @@
 import { writable } from 'svelte/store';
 
 import positions from './positions';
+import transitions from './transitions';
 
 const isNotificationValid = notification => {
   if (!notification || !notification.text) return false;
   if (typeof notification.text !== 'string') return false;
   if (!positions.includes(notification.position)) return false;
+  if (notification.transition && !Object.keys(transitions).includes(notification.transition)) return false;
 
   return true;
 };
