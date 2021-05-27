@@ -5,6 +5,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
+import css from 'rollup-plugin-css-only';
 
 import preprocess from 'svelte-preprocess';
 
@@ -23,49 +24,61 @@ const name = pkg.name
   .replace(/^\w/, m => m.toUpperCase())
   .replace(/-\w/g, m => m[1].toUpperCase());
 
-const config = production ? ({
-  input: 'src/index.js',
-  output: [
-    {
-      file: pkg.module,
-      format: 'es',
-      exports: 'named',
-    },
-    {
-      file: pkg.main,
-      format: 'umd',
-      name,
-      exports: 'named',
-    },
-  ],
-  plugins: [
-    svelte({
-      preprocess: preprocess(preprocessOptions),
-      css: css => css.write('build/bundle.css'),
-    }),
-    resolve({
-      browser: true,
-    }),
-    terser(),
-  ],
-}) : ({
-  input: 'example/index.js',
-  output: {
-    sourcemap: true,
-    format: 'iife',
-    name: 'app',
-    file: 'public/bundle.js',
-  },
-  plugins: [
-    svelte({
-      dev: !production,
-      preprocess: preprocess(preprocessOptions),
-      css: css => css.write('bundle.css'),
-    }),
-    resolve(),
-    commonjs(),
-    livereload('public'),
-  ],
-});
+const config = production
+  ? ({
+      input: 'src/index.js',
+      output: [
+        {
+          file: pkg.module,
+          format: 'es',
+          exports: 'named',
+        },
+        {
+          file: pkg.main,
+          format: 'umd',
+          name,
+          exports: 'named',
+        },
+      ],
+      plugins: [
+        css({
+          output: 'bundle.css',
+        }),
+        svelte({
+          preprocess: preprocess(preprocessOptions),
+          compilerOptions: {
+            dev: !production,
+          },
+        }),
+        resolve({
+          browser: true,
+          dedupe: ['svelte'],
+        }),
+        terser(),
+      ],
+    })
+  : ({
+      input: 'example/index.js',
+      output: {
+        sourcemap: true,
+        format: 'iife',
+        name: 'app',
+        file: 'public/bundle.js',
+      },
+      plugins: [
+        css({
+          output: 'bundle.css',
+        }),
+        svelte({
+          preprocess: preprocess(preprocessOptions),
+          compilerOptions: {
+            dev: !production,
+          },
+        }),
+        resolve(),
+        commonjs(),
+        livereload('public'),
+      ],
+    });
 
 export default config;

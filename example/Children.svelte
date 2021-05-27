@@ -18,7 +18,7 @@
     if (target && target.id) {
       position = target.id;
     }
-  }
+  };
 
   const toggleCustom = () => {
     showCustom = !showCustom;
@@ -27,13 +27,13 @@
 
     toggleItemType();
     clearNotifications();
-  }
+  };
 
   const toggleDanger = () => {
     showDanger = !showDanger;
 
     clearNotifications();
-  }
+  };
 </script>
 
 <div class="example">
@@ -79,7 +79,7 @@
         <div class="position-select-row">
           <button
             class="top-left"
-            class:active={position === "top-left"}
+            class:active={position === 'top-left'}
             id="top-left"
             on:click={setPosition}
           >
@@ -87,7 +87,7 @@
           </button>
           <button
             class="top-center"
-            class:active={position === "top-center"}
+            class:active={position === 'top-center'}
             id="top-center"
             on:click={setPosition}
           >
@@ -95,7 +95,7 @@
           </button>
           <button
             class="top-right"
-            class:active={position === "top-right"}
+            class:active={position === 'top-right'}
             id="top-right"
             on:click={setPosition}
           >
@@ -105,7 +105,7 @@
         <div class="position-select-row">
           <button
             class="bottom-left"
-            class:active={position === "bottom-left"}
+            class:active={position === 'bottom-left'}
             id="bottom-left"
             on:click={setPosition}
           >
@@ -113,7 +113,7 @@
           </button>
           <button
             class="bottom-center"
-            class:active={position === "bottom-center"}
+            class:active={position === 'bottom-center'}
             id="bottom-center"
             on:click={setPosition}
           >
@@ -121,7 +121,7 @@
           </button>
           <button
             class="bottom-right"
-            class:active={position === "bottom-rigth"}
+            class:active={position === 'bottom-rigth'}
             id="bottom-right"
             on:click={setPosition}
           >

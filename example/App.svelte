@@ -5,13 +5,13 @@
 
   let item = null;
 
- const toggleItemType = () => {
-   if (!item) {
-     item = CustomItem;
-   } else {
-     item = null;
-   }
- };
+  const toggleItemType = () => {
+    if (!item) {
+      item = CustomItem;
+    } else {
+      item = null;
+    }
+  };
 </script>
 
 <Notifications {item}>

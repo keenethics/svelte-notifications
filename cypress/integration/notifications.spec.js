@@ -214,20 +214,4 @@ describe('Notifications', () => {
       cy.contains(notificationBottomCenter, fakeText + 'custom bottom center', { timeout: 1000 }).should('not.exist');
     });
   });
-
-  it('Custom notification fades away after timeout', () => {
-    const timeout = 50 + 400 + 150;
-
-    beforeEach(() => {
-      cy.visit(Cypress.config().baseUrl);
-      cy.get('.toggle-custom').click();
-      cy.get(timerInput).clear().type('50');
-    });
-
-    it('Bottom center custom notification fades away', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'custom bottom center');
-      createNotification(positionButtonBottomCenter);
-      cy.contains(notificationBottomCenter, fakeText + 'custom bottom center', { timeout }).should('not.exist');
-    });
-  });
 });
