@@ -100,7 +100,7 @@ npm install --save svelte-notifications
 
   const handleButtonClick = () => {
     addNotification({
-      position: 'bottom-right,
+      position: 'bottom-right',
       heading: 'hi i am custom notification',
       type: 'error',
       description: 'lorem ipsum',
