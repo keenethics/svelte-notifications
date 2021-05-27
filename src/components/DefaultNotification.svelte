@@ -23,7 +23,7 @@
   .default-notification-style-button {
     display: block;
     width: 40px;
-    padding: 0 0 2px;
+    padding: 0;
     margin: 0;
     border: none;
     border-left: 1px solid #eee;
