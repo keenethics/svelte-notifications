@@ -13,7 +13,8 @@
   ],
   "files": [
     "build",
-    "src"
+    "src",
+    "index.d.ts"
   ],
   "scripts": {
     "build": "rollup -c",
