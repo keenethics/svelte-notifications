@@ -60,7 +60,7 @@ const config = production ? ({
     svelte({
       dev: !production,
       preprocess: preprocess(preprocessOptions),
-      css: css => css.write('public/bundle.css'),
+      css: css => css.write('bundle.css'),
     }),
     resolve(),
     commonjs(),
