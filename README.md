@@ -24,7 +24,7 @@ npm install --save svelte-notifications
 // MainComponent.svelte
 
 <script>
-  import Notifications from 'svelte-notifications';
+  import { Notifications } from 'svelte-notifications';
 
   import App from './App.svelte';
 </script>
