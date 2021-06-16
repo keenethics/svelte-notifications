@@ -17,17 +17,14 @@ interface DefaultNotificationOptions {
     removeAfter?: number;
 }
 
-type addNotification = (notification: DefaultNotificationOptions | Record<string, any>) => void;
-
-type removeNotification = (notificationId: string) => void
-
-type clearNotifications = () => void;
-
-declare function getNotificationsContext(): {
+type NotificationsContext = {
+    // TODO: type subscribe
     subscribe: any;
-    addNotification(): addNotification;
-    removeNotification(): removeNotification;
-    clearNotifications(): clearNotifications;
-};
+    addNotification: (notification: DefaultNotificationOptions | Record<string, any>) => void;
+    removeNotification: (notificationId: string) => void;
+    clearNotifications: () => void;
+}
+
+declare function getNotificationsContext(): NotificationsContext;
 
 export { NotificationsProps, Notifications, getNotificationsContext }
