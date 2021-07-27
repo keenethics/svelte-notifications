@@ -5,7 +5,7 @@ interface NotificationsProps {
     withoutStyles?: boolean;
 }
 
-declare class Notifications extends SvelteComponent {
+export default class Notifications extends SvelteComponent {
     $$prop_def: NotificationsProps;
 }
 
@@ -23,11 +23,9 @@ type removeNotification = (notificationId: string) => void
 
 type clearNotifications = () => void;
 
-declare function getNotificationsContext(): {
+export function getNotificationsContext(): {
     subscribe: any;
-    addNotification(): addNotification;
-    removeNotification(): removeNotification;
-    clearNotifications(): clearNotifications;
+    addNotification: addNotification;
+    removeNotification: removeNotification;
+    clearNotifications: clearNotifications;
 };
-
-export { NotificationsProps, Notifications, getNotificationsContext }
