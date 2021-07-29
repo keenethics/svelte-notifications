@@ -71,7 +71,7 @@
 </style>
 
 <script>
-  import { fade } from 'svelte/transition';
+  import {getTransition} from '../transitions';
 
   export let notification = {};
   export let withoutStyles = false;
@@ -80,7 +80,10 @@
   const {
     text,
     type,
+    transition,
   } = notification;
+
+  const transition_type = getTransition(transition)
 
   const getClass = (suffix) => {
     const defaultSuffix = suffix ? `-${suffix}` : '';
@@ -95,8 +98,8 @@
   class={getClass()}
   role="status"
   aria-live="polite"
-  in:fade
-  out:fade
+  in:transition_type
+  out:transition_type
 >
   <div class={getClass('content')}>
     <slot>{text}</slot>

@@ -92,7 +92,7 @@ label {
   color: rgba(255, 255, 255, 0.4);
 }
 
-input[type="text"] {
+input[type="text"], select {
   font-size: 18px;
   background: #37425f;
   color: #fff;
