@@ -74,9 +74,9 @@ npm install --save svelte-notifications
 // CustomNotification.svelte
 
 <script>
-  let notification = {};
+  export let notification = {};
   // `onRemove` function will be passed into your component.
-  let onRemove = null;
+  export let onRemove = null;
 
   const handleButtonClick = () => {
     onRemove();
