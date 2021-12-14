@@ -1,19 +1,21 @@
 version: 2
 jobs:
   run-checks:
-    docker: # use the docker executor type; machine and macos executors are also supported
-      - image: cypress/base:10.15.3
+    docker:
+      - image: cypress/base:14.16.0
+        environment:
+          TERM: xterm
     steps:
-      - checkout # check out the code in the project directory
+      - checkout
       - run:
-          name: Install  dependencies
+          name: Install dependencies
           command: npm install
       - run:
           name: Check code with eslint
           command: npm run lint
       - run:
           name: Run end-to-end tests
-          command:  npm run ci
+          command: npm run ci
 workflows:
   version: 2
   stack:

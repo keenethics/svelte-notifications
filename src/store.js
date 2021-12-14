@@ -14,10 +14,10 @@ const addNotification = (notification, update) => {
   if (!isNotificationValid(notification)) throw new Error('Notification object is not valid');
 
   const {
-		id = `${new Date().getTime()}_${Math.floor(Math.random() * 9999)}`,
-		removeAfter = +notification.removeAfter,
-		...rest
-  } = notification
+    id = `${new Date().getTime()}_${Math.floor(Math.random() * 9999)}`,
+    removeAfter = +notification.removeAfter,
+    ...rest
+  } = notification;
 
   update((notifications) => {
     return [...notifications, {
