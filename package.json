@@ -1,7 +1,7 @@
 {
   "name": "svelte-notifications",
   "description": "Extremely simple and flexible notifications for Svelte",
-  "version": "0.9.91",
+  "version": "0.9.92",
   "svelte": "src/index.js",
   "module": "build/bundle.mjs",
   "main": "build/bundle.js",
