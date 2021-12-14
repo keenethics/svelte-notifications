@@ -45,7 +45,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        v0.9.9
+        v0.9.92
       </a>
     </h1>
     <p>Extremely simple and flexible notifications for Svelte</p>
