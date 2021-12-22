@@ -1,9 +1,8 @@
-# Svelte notifications
-
 ![build](https://img.shields.io/circleci/build/github/keenethics/svelte-notifications/master.svg)
 ![version](https://img.shields.io/github/package-json/v/keenethics/svelte-notifications.svg)
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 
+# Svelte notifications
 Simple and flexible notifications system for Svelte 3
 
 ![Svelte Notifications](https://github.com/keenethics/svelte-notifications/blob/media/svelte-notifications-preview.png?raw=true)
@@ -20,7 +19,7 @@ npm install --save svelte-notifications
 
 ## Basic usage
 
-```javascript
+```svelte
 // MainComponent.svelte
 
 <script>
@@ -34,7 +33,7 @@ npm install --save svelte-notifications
 </Notifications>
 ```
 
-```javascript
+```svelte
 // ChildrenComponent.svelte
 
 <script>
@@ -55,7 +54,7 @@ npm install --save svelte-notifications
 
 ## Providing custom notification component
 
-```javascript
+```svelte
 // MainComponent.svelte
 
 <script>
@@ -70,7 +69,7 @@ npm install --save svelte-notifications
 </Notifications>
 ```
 
-```javascript
+```svelte
 // CustomNotification.svelte
 
 <script>
@@ -90,7 +89,7 @@ npm install --save svelte-notifications
 </div>
 ```
 
-```javascript
+```svelte
 // AnotherComponent.svelte
 
 <script>
@@ -123,7 +122,7 @@ The `Notifications` component supplies descendant components with notifications 
 * @prop {component} `[item=null]` - Custom notification component that receives the notification object
 * @prop {boolean} `[withoutStyles=false]` - If you don't want to use the default styles, this flag will remove the classes to which the styles are attached
 
-```javascript
+```svelte
 // MainComponent.svelte
 
 <script>
@@ -141,7 +140,7 @@ The `Notifications` component supplies descendant components with notifications 
 
 A function that allows you to access the store and the functions that control the store.
 
-```javascript
+```svelte
 // ChildrenComponent.svelte
 
 <script>
@@ -163,13 +162,13 @@ A function that allows you to access the store and the functions that control th
 You can provide any object that the notification component will receive. The default object looks like this:
 
 * @param {Object} `notification` - The object that will receive the notification component
-* @param {string} `[id=timestamp]` - Unique notification identificator
+* @param {string} `[id=timestamp-rand]` - Unique notification identificator
 * @param {string} `text` – Notification text
-* @param {string} `position` – One of these values: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`
+* @param {string} `[position=bottom-center]` – One of these values: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`
 * @param {string} `type` – One of these values: `success`, `warning`, `danger`
 * @param {number} `[removeAfter]` – After how much the notification will disappear (in milliseconds)
 
-```javascript
+```svelte
 // ChildrenComponent.svelte
 
 <script>
@@ -180,7 +179,7 @@ You can provide any object that the notification component will receive. The def
   addNotification({
     id: 'uniqNotificationId',
     text: 'Notification',
-    position: 'bottom-center',
+    position: 'top-center',
     type: 'success',
     removeAfter: 4000,
     ...rest,
@@ -192,7 +191,7 @@ You can provide any object that the notification component will receive. The def
 
 * @param {string} `id` - Unique notification identificator
 
-```javascript
+```svelte
 // ChildrenComponent.svelte
 
 <script>
@@ -206,7 +205,7 @@ You can provide any object that the notification component will receive. The def
 
 #### `getNotificationsContext:clearNotifications`
 
-```javascript
+```svelte
 // ChildrenComponent.svelte
 
 <script>

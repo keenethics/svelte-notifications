@@ -6,7 +6,7 @@
   .default-position-style-bottom-center,
   .default-position-style-bottom-right {
     position: fixed;
-    width: 270px;
+    max-width: 400px;
   }
 
   .default-position-style-top-left {

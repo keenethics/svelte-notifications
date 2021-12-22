@@ -26,57 +26,57 @@ const name = pkg.name
 
 const config = production
   ? ({
-      input: 'src/index.js',
-      output: [
-        {
-          file: pkg.module,
-          format: 'es',
-        },
-        {
-          file: pkg.main,
-          format: 'umd',
-          name,
-        },
-      ],
-      plugins: [
-        css({
-          output: 'bundle.css',
-        }),
-        svelte({
-          preprocess: preprocess(preprocessOptions),
-          compilerOptions: {
-            dev: !production,
-          },
-        }),
-        resolve({
-          browser: true,
-          dedupe: ['svelte'],
-        }),
-        terser(),
-      ],
-    })
-  : ({
-      input: 'example/index.js',
-      output: {
-        sourcemap: true,
-        format: 'iife',
-        name: 'app',
-        file: 'public/bundle.js',
+    input: 'src/index.js',
+    output: [
+      {
+        file: pkg.module,
+        format: 'es',
       },
-      plugins: [
-        css({
-          output: 'bundle.css',
-        }),
-        svelte({
-          preprocess: preprocess(preprocessOptions),
-          compilerOptions: {
-            dev: !production,
-          },
-        }),
-        resolve(),
-        commonjs(),
-        livereload('public'),
-      ],
-    });
+      {
+        file: pkg.main,
+        format: 'umd',
+        name,
+      },
+    ],
+    plugins: [
+      css({
+        output: 'bundle.css',
+      }),
+      svelte({
+        preprocess: preprocess(preprocessOptions),
+        compilerOptions: {
+          dev: !production,
+        },
+      }),
+      resolve({
+        browser: true,
+        dedupe: ['svelte'],
+      }),
+      terser(),
+    ],
+  })
+  : ({
+    input: 'example/index.js',
+    output: {
+      sourcemap: true,
+      format: 'iife',
+      name: 'app',
+      file: 'public/bundle.js',
+    },
+    plugins: [
+      css({
+        output: 'bundle.css',
+      }),
+      svelte({
+        preprocess: preprocess(preprocessOptions),
+        compilerOptions: {
+          dev: !production,
+        },
+      }),
+      resolve(),
+      commonjs(),
+      livereload('public'),
+    ],
+  });
 
 export default config;
