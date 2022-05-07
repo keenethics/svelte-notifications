@@ -1,5 +1,3 @@
-import faker from 'faker';
-
 const positionButtonBottomCenter = '#bottom-center';
 const positionButtonBottomRight = '#bottom-right';
 const positionButtonBottomLeft = '#bottom-left';
@@ -15,7 +13,7 @@ const notificationTopLeft = '.position-top-left .notification .notification-cont
 const notificationInput = '#notification-text';
 const timerInput = '#notification-remove-after';
 const deleteNotificationButton = 'button[aria-label="delete notification"]';
-const fakeText = faker.lorem.words(2);
+const fakeText = Math.random().toString(36).substring(2, 15);
 
 const createNotification = (position) => {
   cy.get(position).click();
