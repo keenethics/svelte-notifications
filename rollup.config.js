@@ -19,10 +19,6 @@ const preprocessOptions = {
   },
 };
 const production = !process.env.ROLLUP_WATCH;
-const name = pkg.name
-  .replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
-  .replace(/^\w/, m => m.toUpperCase())
-  .replace(/-\w/g, m => m[1].toUpperCase());
 
 const config = production
   ? ({
@@ -35,7 +31,8 @@ const config = production
       {
         file: pkg.main,
         format: 'umd',
-        name,
+        exports: 'named',
+        name: 'Notifications',
       },
     ],
     plugins: [
