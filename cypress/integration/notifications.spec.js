@@ -22,7 +22,7 @@ const createNotification = (position) => {
 
 const deleteNotification = () => {
   cy.get(deleteNotificationButton).click();
-  cy.contains(notificationBottomCenter, fakeText + 'bottom center').should('not.exist');
+  cy.contains(notificationBottomCenter, `${fakeText} bottom center`).should('not.exist');
 };
 
 const visit = () => {
@@ -34,39 +34,39 @@ describe('Notifications', () => {
     beforeEach(visit);
 
     it('Bottom center notification should appear', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'bottom center');
+      cy.get(notificationInput).clear().type(`${fakeText} bottom center`);
       createNotification(positionButtonBottomCenter);
-      cy.contains(notificationBottomCenter, fakeText + 'bottom center').should('to.exist');
+      cy.contains(notificationBottomCenter, `${fakeText} bottom center`).should('to.exist');
     });
 
     it('Bottom right notification should appear', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'bottom right');
+      cy.get(notificationInput).clear().type(`${fakeText} bottom right`);
       createNotification(positionButtonBottomRight);
-      cy.contains(notificationBottomRight, fakeText + 'bottom right').should('to.exist');
+      cy.contains(notificationBottomRight, `${fakeText} bottom right`).should('to.exist');
     });
 
     it('Bottom left notification should appear', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'bottom left');
+      cy.get(notificationInput).clear().type(`${fakeText} bottom left`);
       createNotification(positionButtonBottomLeft);
-      cy.contains(notificationBottomLeft, fakeText + 'bottom left').should('to.exist');
+      cy.contains(notificationBottomLeft, `${fakeText} bottom left`).should('to.exist');
     });
 
     it('Top left notification should appear', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'top left');
+      cy.get(notificationInput).clear().type(`${fakeText} top left`);
       createNotification(positionButtonTopLeft);
-      cy.contains(notificationTopLeft, fakeText + 'top left').should('to.exist');
+      cy.contains(notificationTopLeft, `${fakeText} top left`).should('to.exist');
     });
 
     it('Top right notification should appear', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'top right');
+      cy.get(notificationInput).clear().type(`${fakeText} top right`);
       createNotification(positionButtonTopRight);
-      cy.contains(notificationTopRight, fakeText + 'top right').should('to.exist');
+      cy.contains(notificationTopRight, `${fakeText} top right`).should('to.exist');
     });
 
     it('Top center notification should appear', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'top center');
+      cy.get(notificationInput).clear().type(`${fakeText} top center`);
       createNotification(positionButtonTopCenter);
-      cy.contains(notificationTopCenter, fakeText + 'top center').should('to.exist');
+      cy.contains(notificationTopCenter, `${fakeText} top center`).should('to.exist');
     });
   });
 
@@ -77,7 +77,7 @@ describe('Notifications', () => {
     });
 
     it('\'Clear all\' button clears all notifications', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'clear all');
+      cy.get(notificationInput).clear().type(`${fakeText} clear all`);
       cy.get(timerInput).clear().type('15000');
       createNotification(positionButtonBottomCenter);
       createNotification(positionButtonBottomLeft);
@@ -86,53 +86,53 @@ describe('Notifications', () => {
       createNotification(positionButtonTopLeft);
       createNotification(positionButtonTopRight);
       cy.contains('button', 'Clear all').click();
-      cy.contains(notificationTopCenter, fakeText + 'clear all').should('not.exist');
-      cy.contains(notificationTopLeft, fakeText + 'clear all').should('not.exist');
-      cy.contains(notificationTopRight, fakeText + 'clear all').should('not.exist');
-      cy.contains(notificationBottomCenter, fakeText + 'clear all').should('not.exist');
-      cy.contains(notificationBottomLeft, fakeText + 'clear all').should('not.exist');
-      cy.contains(notificationBottomRight, fakeText + 'clear all').should('not.exist');
+      cy.contains(notificationTopCenter, `${fakeText} clear all`).should('not.exist');
+      cy.contains(notificationTopLeft, `${fakeText} clear all`).should('not.exist');
+      cy.contains(notificationTopRight, `${fakeText} clear all`).should('not.exist');
+      cy.contains(notificationBottomCenter, `${fakeText} clear all`).should('not.exist');
+      cy.contains(notificationBottomLeft, `${fakeText} clear all`).should('not.exist');
+      cy.contains(notificationBottomRight, `${fakeText} clear all`).should('not.exist');
     });
 
     it('Can close bottom center notification', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'bottom center');
+      cy.get(notificationInput).clear().type(`${fakeText} bottom center`);
       createNotification(positionButtonBottomCenter);
-      cy.contains(notificationBottomCenter, fakeText + 'bottom center').should('to.exist');
+      cy.contains(notificationBottomCenter, `${fakeText} bottom center`).should('to.exist');
       deleteNotification();
     });
 
     it('Can close bottom right notification', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'bottom right');
+      cy.get(notificationInput).clear().type(`${fakeText} bottom right`);
       createNotification(positionButtonBottomRight);
-      cy.contains(notificationBottomRight, fakeText + 'bottom right').should('to.exist');
+      cy.contains(notificationBottomRight, `${fakeText} bottom right`).should('to.exist');
       deleteNotification();
     });
 
     it('Can close bottom left notification should appear', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'bottom left');
+      cy.get(notificationInput).clear().type(`${fakeText} bottom left`);
       createNotification(positionButtonBottomLeft);
-      cy.contains(notificationBottomLeft, fakeText + 'bottom left').should('to.exist');
+      cy.contains(notificationBottomLeft, `${fakeText} bottom left`).should('to.exist');
       deleteNotification();
     });
 
     it('Can close top left notification', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'top left');
+      cy.get(notificationInput).clear().type(`${fakeText} top left`);
       createNotification(positionButtonTopLeft);
-      cy.contains(notificationTopLeft, fakeText + 'top left').should('to.exist');
+      cy.contains(notificationTopLeft, `${fakeText} top left`).should('to.exist');
       deleteNotification();
     });
 
     it('Can close top right notification', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'top right');
+      cy.get(notificationInput).clear().type(`${fakeText} top right`);
       createNotification(positionButtonTopRight);
-      cy.contains(notificationTopRight, fakeText + 'top right').should('to.exist');
+      cy.contains(notificationTopRight, `${fakeText} top right`).should('to.exist');
       deleteNotification();
     });
 
     it('Can close top center notification', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'top center');
+      cy.get(notificationInput).clear().type(`${fakeText} top center`);
       createNotification(positionButtonTopCenter);
-      cy.contains(notificationTopCenter, fakeText + 'top center').should('to.exist');
+      cy.contains(notificationTopCenter, `${fakeText} top center`).should('to.exist');
       deleteNotification();
     });
   });
@@ -148,39 +148,39 @@ describe('Notifications', () => {
     });
 
     it('Bottom center notification fades away', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'bottom center');
+      cy.get(notificationInput).clear().type(`${fakeText} bottom center`);
       createNotification(positionButtonBottomCenter);
-      cy.contains(notificationBottomCenter, fakeText + 'bottom center', { timeout }).should('not.exist');
+      cy.contains(notificationBottomCenter, `${fakeText} bottom center`, { timeout }).should('not.exist');
     });
 
     it('Bottom right notification fades away', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'bottom right');
+      cy.get(notificationInput).clear().type(`${fakeText} bottom right`);
       createNotification(positionButtonBottomRight);
-      cy.contains(notificationBottomRight, fakeText + 'bottom right', { timeout }).should('not.exist');
+      cy.contains(notificationBottomRight, `${fakeText} bottom right`, { timeout }).should('not.exist');
     });
 
     it('Bottom left notification fades away', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'bottom left');
+      cy.get(notificationInput).clear().type(`${fakeText} bottom left`);
       createNotification(positionButtonBottomLeft);
-      cy.contains(notificationBottomLeft, fakeText + 'bottom left', { timeout }).should('not.exist');
+      cy.contains(notificationBottomLeft, `${fakeText} bottom left`, { timeout }).should('not.exist');
     });
 
     it('Top left notification fades away', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'top left');
+      cy.get(notificationInput).clear().type(`${fakeText} top left`);
       createNotification(positionButtonTopLeft);
-      cy.contains(notificationTopLeft, fakeText + 'top left', { timeout }).should('not.exist');
+      cy.contains(notificationTopLeft, `${fakeText} top left`, { timeout }).should('not.exist');
     });
 
     it('Top right notification fades away', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'top right');
+      cy.get(notificationInput).clear().type(`${fakeText} top right`);
       createNotification(positionButtonTopRight);
-      cy.contains(notificationTopRight, fakeText + 'top right', { timeout }).should('not.exist');
+      cy.contains(notificationTopRight, `${fakeText} top right`, { timeout }).should('not.exist');
     });
 
     it('Top center notification fades away', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'top center');
+      cy.get(notificationInput).clear().type(`${fakeText} top center`);
       createNotification(positionButtonTopCenter);
-      cy.contains(notificationTopCenter, fakeText + 'top center', { timeout }).should('not.exist');
+      cy.contains(notificationTopCenter, `${fakeText} top center`, { timeout }).should('not.exist');
     });
   });
 
@@ -191,10 +191,10 @@ describe('Notifications', () => {
     });
 
     it('Bottom center custom notification should appear', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'custom bottom center');
+      cy.get(notificationInput).clear().type(`${fakeText} custom bottom center`);
       createNotification(positionButtonBottomCenter);
-      cy.contains(notificationBottomCenter, fakeText + 'custom bottom center').should('to.exist');
-      cy.contains(notificationBottomCenter + ' p', 'Custom description').should('to.exist');
+      cy.contains(notificationBottomCenter, `${fakeText} custom bottom center`).should('to.exist');
+      cy.contains(`${notificationBottomCenter} p`, 'Custom description').should('to.exist');
     });
   });
 
@@ -205,11 +205,11 @@ describe('Notifications', () => {
     });
 
     it('Bottom center custom notification can be closed', () => {
-      cy.get(notificationInput).clear().type(fakeText + 'custom bottom center');
+      cy.get(notificationInput).clear().type(`${fakeText} custom bottom center`);
       cy.get(timerInput).clear().type('500');
       createNotification(positionButtonBottomCenter);
-      cy.get(notificationBottomCenter + ' + .notification-buttons button').last().click();
-      cy.contains(notificationBottomCenter, fakeText + 'custom bottom center', { timeout: 1000 }).should('not.exist');
+      cy.get(`${notificationBottomCenter} + .notification-buttons button`).last().click();
+      cy.contains(notificationBottomCenter, `${fakeText} custom bottom center`, { timeout: 1000 }).should('not.exist');
     });
   });
 });
