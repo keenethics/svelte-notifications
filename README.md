@@ -82,7 +82,7 @@ npm install --save svelte-notifications
   }
 </script>
 
-<div class={notification.type === 'error' ? 'error' : ''}>
+<div class={notification.type === 'danger' ? 'danger' : ''}>
   <h4>{notification.heading}</h4>
   <p>{notification.description}</p>
   <button on:click={handleButtonClick}>Close me</button>
@@ -101,7 +101,7 @@ npm install --save svelte-notifications
     addNotification({
       position: 'bottom-right',
       heading: 'hi i am custom notification',
-      type: 'error',
+      type: 'danger',
       description: 'lorem ipsum',
     });
   }
