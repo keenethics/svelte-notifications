@@ -223,4 +223,4 @@ Default Svelte subscribe method that allows interested parties to be notified wh
 
 ## Contributing
 
-Read more about contributing [here](/blob/master/CONTRIBUTING.md)
+Read more about contributing [here](/CONTRIBUTING.md)
