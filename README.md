@@ -3,6 +3,7 @@
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 # Svelte notifications
+
 Simple and flexible notifications system for Svelte 3
 
 ![Svelte Notifications](https://github.com/keenethics/svelte-notifications/blob/media/svelte-notifications-preview.png?raw=true)
@@ -112,15 +113,14 @@ npm install --save svelte-notifications
 </div>
 ```
 
-
 ## API
 
 #### `Notifications`
 
 The `Notifications` component supplies descendant components with notifications store through context.
 
-* @prop {component} `[item=null]` - Custom notification component that receives the notification object
-* @prop {boolean} `[withoutStyles=false]` - If you don't want to use the default styles, this flag will remove the classes to which the styles are attached
+- @prop {component} `[item=null]` - Custom notification component that receives the notification object
+- @prop {boolean} `[withoutStyles=false]` - If you don't want to use the default styles, this flag will remove the classes to which the styles are attached
 
 ```svelte
 // MainComponent.svelte
@@ -161,12 +161,12 @@ A function that allows you to access the store and the functions that control th
 
 You can provide any object that the notification component will receive. The default object looks like this:
 
-* @param {Object} `notification` - The object that will receive the notification component
-* @param {string} `[id=timestamp-rand]` - Unique notification identificator
-* @param {string} `text` – Notification text
-* @param {string} `[position=bottom-center]` – One of these values: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`
-* @param {string} `type` – One of these values: `success`, `warning`, `danger`
-* @param {number} `[removeAfter]` – After how much the notification will disappear (in milliseconds)
+- @param {Object} `notification` - The object that will receive the notification component
+- @param {string} `[id=timestamp-rand]` - Unique notification identificator
+- @param {string} `text` – Notification text
+- @param {string} `[position=bottom-center]` – One of these values: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`
+- @param {string} `type` – One of these values: `success`, `warning`, `danger`
+- @param {number} `[removeAfter]` – After how much the notification will disappear (in milliseconds)
 
 ```svelte
 // ChildrenComponent.svelte
@@ -189,7 +189,7 @@ You can provide any object that the notification component will receive. The def
 
 #### `getNotificationsContext:removeNotification`
 
-* @param {string} `id` - Unique notification identificator
+- @param {string} `id` - Unique notification identificator
 
 ```svelte
 // ChildrenComponent.svelte
@@ -221,3 +221,6 @@ You can provide any object that the notification component will receive. The def
 
 Default Svelte subscribe method that allows interested parties to be notified whenever the store value changes
 
+## Contributing
+
+Read more about contributing [here](/blob/master/CONTRIBUTING.md)
