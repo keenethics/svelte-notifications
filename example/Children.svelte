@@ -121,7 +121,7 @@
           </button>
           <button
             class="bottom-right"
-            class:active={position === 'bottom-rigth'}
+            class:active={position === 'bottom-right'}
             id="bottom-right"
             on:click={setPosition}
           >

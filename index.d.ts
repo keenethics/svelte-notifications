@@ -15,7 +15,7 @@ interface DefaultNotificationOptions {
   id?: string;
   text: string;
   position: Position;
-  type?: 'success' | 'warning' | 'danger';
+  type?: string;
   removeAfter?: number;
 }
 
