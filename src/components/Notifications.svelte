@@ -53,6 +53,7 @@
 
   export let item = null;
   export let withoutStyles = false;
+  export let zIndex = null;
 
   const getClass = (position = '') => {
     const defaultPositionClass = ` default-position-style-${position}`;
@@ -66,7 +67,10 @@
 <slot></slot>
 <div class="notifications">
   {#each positions as position}
-    <div class={getClass(position)}>
+    <div
+      class={getClass(position)}
+      style:z-index={zIndex}
+    >
       {#each $store as notification (notification.id)}
         {#if notification.position === position}
           <Notification

@@ -14,6 +14,6 @@
   };
 </script>
 
-<Notifications {item}>
+<Notifications {item} zIndex={5000}>
   <Children {toggleItemType} />
 </Notifications>
