@@ -121,6 +121,7 @@ The `Notifications` component supplies descendant components with notifications 
 
 - @prop {component} `[item=null]` - Custom notification component that receives the notification object
 - @prop {boolean} `[withoutStyles=false]` - If you don't want to use the default styles, this flag will remove the classes to which the styles are attached
+- @prop {string|number} `[zIndex]` - Adds a style with z-index for the notification container
 
 ```svelte
 // MainComponent.svelte
