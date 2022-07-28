@@ -3,6 +3,7 @@ import type { SvelteComponent } from 'svelte';
 interface NotificationsProps {
   item?: SvelteComponent;
   withoutStyles?: boolean;
+  zIndex?: string | number;
 }
 
 export default class Notifications extends SvelteComponent {
