@@ -150,7 +150,7 @@
           for="show-danger"
           class={`label-show-custom ${showDanger ? 'active' : ''}`}
         >
-          Show danger notification
+          Show error notification
         </label>
       </div>
     {/if}
@@ -161,7 +161,7 @@
       text,
       removeAfter,
       position,
-      type: showDanger && 'danger',
+      type: showDanger && 'error',
       customClass: 'default-custom-class',
     })}
     class="button"

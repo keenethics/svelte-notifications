@@ -40,12 +40,12 @@
     background: rgba(0, 0, 0, 0.01);
   }
 
-  .default-notification-danger {
+  .default-notification-error {
     background: #f3555a;
     color: #fff;
   }
 
-  .default-notification-danger .default-notification-style-button {
+  .default-notification-error .default-notification-style-button {
     border-left: 1px solid rgba(255, 255, 255, 0.4);
     color: #fff;
   }
