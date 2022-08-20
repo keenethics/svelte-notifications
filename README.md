@@ -166,7 +166,7 @@ You can provide any object that the notification component will receive. The def
 - @param {string} `[id=timestamp-rand]` - Unique notification identificator
 - @param {string} `text` – Notification text
 - @param {string} `[position=bottom-center]` – One of these values: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`
-- @param {string} `type` – One of these values: `success`, `warning`, `danger`
+- @param {string} `type` – One of these values: `success`, `warning`, `error`
 - @param {number} `[removeAfter]` – After how much the notification will disappear (in milliseconds)
 
 ```svelte
