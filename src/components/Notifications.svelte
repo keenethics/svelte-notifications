@@ -55,6 +55,10 @@
   export let withoutStyles = false;
   export let zIndex = null;
 
+  export let defaults;
+
+  $: store.defaults.set(defaults);
+
   const getClass = (position = '') => {
     const defaultPositionClass = ` default-position-style-${position}`;
 

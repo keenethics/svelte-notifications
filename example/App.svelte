@@ -14,6 +14,6 @@
   };
 </script>
 
-<Notifications {item} zIndex={5000}>
+<Notifications {item} zIndex={5000} defaults={{removeAfter: 1000, position: 'top-right'}}>
   <Children {toggleItemType} />
 </Notifications>

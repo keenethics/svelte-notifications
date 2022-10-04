@@ -16,7 +16,7 @@
 
   const setPosition = ({ target }) => {
     if (target && target.id) {
-      position = target.id;
+      position = position === target.id ? '' : target.id;
     }
   };
 
