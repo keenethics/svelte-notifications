@@ -92,21 +92,23 @@
   };
 </script>
 
-<div
-  class={getClass()}
-  role="status"
-  aria-live="polite"
-  in:fade
-  out:fade
->
-  <div class={getClass('content')}>
-    <slot>{text}</slot>
-  </div>
-  <button
-    class={getClass('button')}
-    on:click={onRemove}
-    aria-label="delete notification"
+{#if text}
+  <div
+    class={getClass()}
+    role="status"
+    aria-live="polite"
+    in:fade
+    out:fade
   >
-    &times;
-  </button>
-</div>
+    <div class={getClass('content')}>
+      <slot>{text}</slot>
+    </div>
+    <button
+      class={getClass('button')}
+      on:click={onRemove}
+      aria-label="delete notification"
+    >
+      &times;
+    </button>
+  </div>
+{/if}

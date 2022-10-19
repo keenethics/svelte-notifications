@@ -11,7 +11,6 @@ const addNotification = (notification, store) => {
     ...notification,
   };
 
-  if (!safeNotification.text || typeof safeNotification.text !== 'string') return;
   if (!positions.includes(notification.position)) return;
 
   update((notifications) => {

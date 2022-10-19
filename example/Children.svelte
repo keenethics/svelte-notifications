@@ -134,7 +134,11 @@
   <div class="additional-tools">
     <div class="col col-1-3 show-custom">
       <input type="checkbox" bind:checked={showCustom} id="show-custom">
-      <span class="toggle toggle-custom" on:click={toggleCustom}></span>
+      <span
+        class="toggle toggle-custom"
+        on:click={toggleCustom}
+        role="presentation"
+      />
       <label
         for="show-custom"
         class={`label-show-custom ${showCustom ? 'active' : ''}`}
@@ -145,7 +149,11 @@
     {#if !showCustom}
       <div class="col col-1-3 show-custom">
         <input type="checkbox" bind:checked={showDanger} id="show-danger">
-        <span class="toggle toggle-danger" on:click={toggleDanger}></span>
+        <span
+          class="toggle toggle-danger"
+          on:click={toggleDanger}
+          role="presentation"
+        />
         <label
           for="show-danger"
           class={`label-show-custom ${showDanger ? 'active' : ''}`}

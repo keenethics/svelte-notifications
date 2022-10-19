@@ -14,7 +14,7 @@ export type Position = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' |
 
 interface DefaultNotificationOptions {
   id?: string;
-  text: string;
+  text?: string;
   position: Position;
   type?: string;
   removeAfter?: number;

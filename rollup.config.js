@@ -9,8 +9,6 @@ import css from 'rollup-plugin-css-only';
 
 import preprocess from 'svelte-preprocess';
 
-import pkg from './package.json';
-
 const preprocessOptions = {
   postcss: {
     plugins: [
@@ -25,11 +23,11 @@ const config = production
     input: 'src/index.js',
     output: [
       {
-        file: pkg.module,
+        file: 'build/bundle.mjs',
         format: 'es',
       },
       {
-        file: pkg.main,
+        file: 'build/bundle.js',
         format: 'umd',
         exports: 'named',
         name: 'Notifications',
