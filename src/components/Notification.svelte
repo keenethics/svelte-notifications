@@ -7,11 +7,10 @@
   export let notification = {};
   export let withoutStyles = false;
 
-  const { removeNotification } = getNotificationsContext();
-  const {
-    id,
-    removeAfter,
-  } = notification;
+  const { removeNotification, defaults } = getNotificationsContext();
+
+  const { id } = notification;
+  const removeAfter = +notification.removeAfter || $defaults.removeAfter;
 
   const removeNotificationHandler = () => removeNotification(id);
 
