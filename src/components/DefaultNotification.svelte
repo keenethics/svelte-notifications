@@ -99,6 +99,8 @@
     aria-live="polite"
     in:fade
     out:fade
+    on:mouseenter
+    on:mouseleave
   >
     <div class={getClass('content')}>
       <slot>{text}</slot>
