@@ -55,6 +55,8 @@
   export let withoutStyles = false;
   export let zIndex = null;
 
+  let fadeHalted = false;
+
   const getClass = (position = '') => {
     const defaultPositionClass = ` default-position-style-${position}`;
 
@@ -76,6 +78,7 @@
           <Notification
             {notification}
             {withoutStyles}
+            bind:fadeHalted
             item={item || DefaultNotification}
           />
         {/if}
