@@ -3,7 +3,7 @@
   "description": "Extremely simple and flexible notifications for Svelte",
   "version": "0.9.98",
   "type": "module",
-  "svelte": "src/index.js",
+  "svelte": "dist/index.js",
   "main": "build/bundle.js",
   "module": "build/bundle.mjs",
   "types": "index.d.ts",
@@ -14,9 +14,15 @@
     "notifications"
   ],
   "files": [
-    "src",
+    "dist",
     "index.d.ts"
   ],
+  "exports": {
+	".": {
+		"types": "./index.d.ts",
+		"svelte": "./dist/bundle.js"
+	}
+  },
   "scripts": {
     "build": "rollup -c",
     "autobuild": "rollup -c -w",

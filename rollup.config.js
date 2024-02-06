@@ -23,11 +23,11 @@ const config = production
     input: 'src/index.js',
     output: [
       {
-        file: 'build/bundle.mjs',
+        file: 'dist/bundle.mjs',
         format: 'es',
       },
       {
-        file: 'build/bundle.js',
+        file: 'dist/bundle.js',
         format: 'umd',
         exports: 'named',
         name: 'Notifications',
