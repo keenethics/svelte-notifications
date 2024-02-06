@@ -17,6 +17,12 @@
     "src",
     "index.d.ts"
   ],
+  "exports": {
+	".": {
+		"types": "./index.d.ts",
+		"svelte": "./src/index.js"
+	}
+	},
   "scripts": {
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
